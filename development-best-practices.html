@@ -1,0 +1,74 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Style Guide - MMT Digital</title>
+    <link rel="stylesheet" href="../../css/app.css" />
+    <script src="../../bower_components/modernizr/modernizr.js"></script>
+  </head>
+  <body>
+    <div class="fixed">
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1>
+              <a href="#">
+                <img src="/assets/mmt-logo.svg" width="32" height="32" />
+              </a>
+            </h1>
+          </li>
+          <li class="toggle-topbar menu-icon">
+            <a href="#"><span>Menu</span>
+            </a>
+          </li>
+        </ul>
+        <section class="top-bar-section">
+
+          <!-- Right Nav Section -->
+          <ul class="left">
+            <li class="has-dropdown">
+              <a href="#">JavaScript Style Guide</a>
+              <ul class="dropdown">
+                <li> <a href="summary.html">The short version</a> </li>
+                <li> <a href="formatting.html">Source code formatting</a> </li>
+                <li> <a href="naming-conventions.html">Naming Conventions</a> </li>
+                <li> <a href="development-best-practices.html">JavaScript Best Practices</a> </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <h1></h1>
+        <hr/>
+      </div>
+      <div class="large-12 columns">
+        <h1 id="javascript-development-best-practices-">JavaScript Development Best Practices:</h1>
+        <h2 id="compiling-minification">Compiling &amp; minification</h2>
+        <p>Always minify or compile your customer-facing code, even if it’s just simple minification with pretty-printing.</p>
+        <h2 id="globals">Globals</h2>
+        <p>Don’t use globals. “Global name conflicts are difficult to debug, and can cause intractable problems when two projects try to integrate. In order to make it possible to share common JavaScript code, we’ve adopted conventions to prevent collisions.”</p>
+        <h2 id="be-strict">Be Strict</h2>
+        <p>In any kind of JavaScript file it is also good to add the declaration:</p>
+        <pre><code>&#39;use strict&#39;;</code></pre>
+        <p>This will affect both JSHint and your JavaScript engine, which will become less compliant but run your JavaScript faster.</p>
+        <h2 id="check-for-absolute-equality">Check for absolute equality</h2>
+        <p>Use <code>===</code> and <code>!==</code> instead of <code>==</code> and <code>!=</code>. See
+          <a href="http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/">http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/</a>for more information on exactly why you should do this.</p>
+        <h2 id="function-parameters-required-optional-values">Function parameters - required &amp; optional values</h2>
+        <ul>
+          <li>Keep the number of parameters required by a method to a minimum</li>
+          <li>Required parameters go first</li>
+          <li>Optional parameters go last</li>
+          <li>If there’s more than a single optional parameter, supply the values as an object with the optional values as parameters of that object.</li>
+        </ul>
+      </div>
+    </div>
+    <script src="../../bower_components/jquery/jquery.min.js"></script>
+    <script src="../../bower_components/foundation/js/foundation.min.js"></script>
+    <script src="../../js/app.js"></script>
+  </body>
+</html>

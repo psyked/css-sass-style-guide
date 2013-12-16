@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Style Guide - MMT Digital</title>
+    <link rel="stylesheet" href="../../css/app.css" />
+    <script src="../../bower_components/modernizr/modernizr.js"></script>
+  </head>
+  <body>
+    <div class="fixed">
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1>
+              <a href="#">
+                <img src="/assets/mmt-logo.svg" width="32" height="32" />
+              </a>
+            </h1>
+          </li>
+          <li class="toggle-topbar menu-icon">
+            <a href="#"><span>Menu</span>
+            </a>
+          </li>
+        </ul>
+        <section class="top-bar-section">
+
+          <!-- Right Nav Section -->
+          <ul class="left">
+            <li class="has-dropdown">
+              <a href="#">JavaScript Style Guide</a>
+              <ul class="dropdown">
+                <li> <a href="summary.html">The short version</a> </li>
+                <li> <a href="formatting.html">Source code formatting</a> </li>
+                <li> <a href="naming-conventions.html">Naming Conventions</a> </li>
+                <li> <a href="development-best-practices.html">JavaScript Best Practices</a> </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <h1></h1>
+        <hr/>
+      </div>
+      <div class="large-12 columns">
+        <h1 id="background-reading-">Background reading:</h1>
+        <p>The following JavaScript Style Guidelines are drawn from many sources, but primarily from the ‘JS Winning Style’, ‘Idomatic Style manifesto’, ‘Airbnb JavaScript Style Guide’ and ‘Google JavaScript Style Guide’.</p>
+        <h1 id="source-code-formatting-rules-">Source Code formatting rules:</h1>
+        <p>All code in any code-base should look like a single person typed it, no matter how many people contributed. If you’re joining a project for the first time and it doesn’t follow these guidelines, keep with the existing style of the code - above
+          all else, consistency is key.</p>
+        <h1 id="indentation">Indentation</h1>
+        <p>Indent your code with two spaces, not longer and no tabs.</p>
+        <h1 id="spaces-between-arguments-and-expressions">Spaces between arguments and expressions</h1>
+        <p>Use sparingly and to enhance legibility, with some special exceptions for one-liners (see
+          <a href="https://github.com/rwaldron/idiomatic.js/#spacing">https://github.com/rwaldron/idiomatic.js/#spacing</a>). No trailing whitespace on your lines, either.</p>
+        <pre><code>project.MyClass = function(arg1, arg2) {</code></pre>
+        <h1 id="line-length-wrapping-content">Line length &amp; wrapping content</h1>
+        <p>Max 80 characters. When wrapping, other indentation than two spaces is allowed to for example align function arguments to the position where the first function argument was.</p>
+        <h1 id="semicolons">Semicolons</h1>
+        <p>Always use semicolons at the end of lines (and don’t rely on implicit insertion.)</p>
+        <h1 id="comments">Comments</h1>
+        <p>Generally, your code should be self-explanatory enough to not need comments. There are always exceptions however, and for those situations:</p>
+        <ul>
+          <li>Single line comments above the code that is subject</li>
+          <li>Multiline comments are good -End of line comments are prohibited! -JSDoc style is good, but requires a significant time investment JSDoc format comments are encouraged because they integrate well with many IDEs including WebStorm, and will improve
+            the usefulness of autocompletion. See
+            <a href="https://developers.google.com/closure/compiler/docs/js-for-compiler">https://developers.google.com/closure/compiler/docs/js-for-compiler</a>and
+            <a href="http://css.dzone.com/articles/introduction-jsdoc">http://css.dzone.com/articles/introduction-jsdoc</a>for more information on JSDoc.</li>
+        </ul>
+        <h1 id="quotes">Quotes</h1>
+        <p>Prefer single quotes (&#39;) over double quotes (&quot;), but consistency is key. If you’re embedding a String which needs to include an &#39; in a string declaration escape it with a backslash, rather than swapping between single and double quotes.</p>
+        <h1 id="variable-declarations">Variable declarations</h1>
+        <p>Use a single var entry, and separate by commas placed at the end of the line.</p>
+        <h1 id="braces-brace-placement">Braces &amp; brace placement</h1>
+        <p>Use opening brace on the same line, and use braces always - no shorthand code or implied block scoping.</p>
+        <h1 id="blank-lines">Blank lines</h1>
+        <p>Use newlines to group logically related pieces of code.</p>
+      </div>
+    </div>
+    <script src="../../bower_components/jquery/jquery.min.js"></script>
+    <script src="../../bower_components/foundation/js/foundation.min.js"></script>
+    <script src="../../js/app.js"></script>
+  </body>
+</html>
