@@ -19,20 +19,16 @@ This will affect both JSHint and your JavaScript engine, which will become less 
 Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/ for more information on exactly why you should do this.
 
 ##Function parameters - required & optional values
-- Keep the number of parameters required by a method to a minimum
-- Required parameters go first
-- Optional parameters go last
-- If there’s more than a single optional parameter, supply the values as an object with the optional values as parameters of that object.
+Keep the number of parameters required by a method to a minimumRequired parameters go firstOptional parameters go lastIf there’s more than a single optional parameter, supply the values as an object with the optional values as parameters of that object.
 
 ## Types
+**Primitives**: When you access a primitive type you work directly on its value
 
-- **Primitives**: When you access a primitive type you work directly on its value
-
-    + `string`
-    + `number`
-    + `boolean`
-    + `null`
-    + `undefined`
+    - `string`
+    - `number`
+    - `boolean`
+    - `null`
+    - `undefined`
 
 
     var foo = 1,
@@ -42,11 +38,11 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
     console.log(foo, bar); // => 1, 9
 
-- **Complex**: When you access a complex type you work on a reference to its value
+**Complex**: When you access a complex type you work on a reference to its value
 
-    + `object`
-    + `array`
-    + `function`
+    - `object`
+    - `array`
+    - `function`
 
 
     var foo = [1, 2],
@@ -56,13 +52,8 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
     console.log(foo[0], bar[0]); // => 9, 9
 
-
-
-
 ## Objects
-
-- Use the literal syntax for object creation.
-
+Use the literal syntax for object creation.
 
     // bad
     var item = new Object();
@@ -70,9 +61,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
     // good
     var item = {};
 
-
-- Don't use [reserved words](http://es5.github.io/#x7.6.1) as keys. It won't work in IE8. [More info](https://github.com/airbnb/javascript/issues/61)
-
+Don't use [reserved words](http://es5.github.io/#x7.6.1) as keys. It won't work in IE8. [More info](https://github.com/airbnb/javascript/issues/61)
 
     // bad
     var superman = {
@@ -86,9 +75,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       hidden: true
     };
 
-
-- Use readable synonyms in place of reserved words.
-
+Use readable synonyms in place of reserved words.
 
     // bad
     var superman = {
@@ -105,12 +92,8 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       type: 'alien'
     };
 
-
-
 ## Arrays
-
-- Use the literal syntax for array creation
-
+Use the literal syntax for array creation
 
     // bad
     var items = new Array();
@@ -118,9 +101,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
     // good
     var items = [];
 
-
-- If you don't know array length use Array#push.
-
+If you don't know array length use Array#push.
 
     var someStack = [];
 
@@ -131,9 +112,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
     // good
     someStack.push('abracadabra');
 
-
-- When you need to copy an array use Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
-
+When you need to copy an array use Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
 
     var len = items.length,
         itemsCopy = [],
@@ -147,23 +126,15 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
     // good
     itemsCopy = items.slice();
 
-
-- To convert an array-like object to an array, use Array#slice.
-
+To convert an array-like object to an array, use Array#slice.
 
     function trigger() {
       var args = Array.prototype.slice.call(arguments);
       ...
     }
 
-
-
-
-
 ## Strings
-
-- Use single quotes `''` for strings
-
+Use single quotes `''` for strings
 
     // bad
     var name = "Bob Parr";
@@ -177,10 +148,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
     // good
     var fullName = 'Bob ' + this.lastName;
 
-
-- Strings longer than 80 characters should be written across multiple lines using string concatenation.
-- Note: If overused, long strings with concatenation could impact performance. [jsPerf](http://jsperf.com/ya-string-concat) & [Discussion](https://github.com/airbnb/javascript/issues/40)
-
+Strings longer than 80 characters should be written across multiple lines using string concatenation.Note: If overused, long strings with concatenation could impact performance. [jsPerf](http://jsperf.com/ya-string-concat) & [Discussion](https://github.com/airbnb/javascript/issues/40)
 
     // bad
     var errorMessage = 'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.';
@@ -202,9 +170,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       'with this, you would get nowhere ' +
       'fast.';
 
-
-- When programatically building up a string, use Array#join instead of string concatenation. Mostly for IE: [jsPerf](http://jsperf.com/string-vs-array-concat/2).
-
+When programatically building up a string, use Array#join instead of string concatenation. Mostly for IE: [jsPerf](http://jsperf.com/string-vs-array-concat/2).
 
     var items,
         messages,
@@ -246,14 +212,8 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       return '' + items.join('') + '';
     }
 
-
-
-
-
 ## Functions
-
-- Function expressions:
-
+Function expressions:
 
     // anonymous function expression
     var anonymous = function() {
@@ -270,10 +230,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       console.log('Welcome to the Internet. Please follow me.');
     })();
 
-
-- Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears.
-- **Note:** ECMA-262 defines a `block` as a list of statements. A function declaration is not a statement. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
-
+Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears.**Note:** ECMA-262 defines a `block` as a list of statements. A function declaration is not a statement. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
 
     // bad
     if (currentUser) {
@@ -290,9 +247,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       };
     }
 
-
-- Never name a parameter `arguments`, this will take precedence over the `arguments` object that is given to every function scope.
-
+Never name a parameter `arguments`, this will take precedence over the `arguments` object that is given to every function scope.
 
     // bad
     function nope(name, options, arguments) {
@@ -304,15 +259,8 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       // ...stuff...
     }
 
-
-
-
-
-
 ## Properties
-
-- Use dot notation when accessing properties.
-
+Use dot notation when accessing properties.
 
     var luke = {
       jedi: true,
@@ -325,9 +273,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
     // good
     var isJedi = luke.jedi;
 
-
-- Use subscript notation `[]` when accessing properties with a variable.
-
+Use subscript notation `[]` when accessing properties with a variable.
 
     var luke = {
       jedi: true,
@@ -340,14 +286,8 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
     var isJedi = getProp('jedi');
 
-
-
-
-
 ## Variables
-
-- Always use `var` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that.
-
+Always use `var` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that.
 
     // bad
     superPower = new SuperPower();
@@ -355,9 +295,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
     // good
     var superPower = new SuperPower();
 
-
-- Use one `var` declaration for multiple variables and declare each variable on a newline.
-
+Use one `var` declaration for multiple variables and declare each variable on a newline.
 
     // bad
     var items = getItems();
@@ -369,9 +307,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
         goSportsTeam = true,
         dragonball = 'z';
 
-
-- Declare unassigned variables last. This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
-
+Declare unassigned variables last. This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
 
     // bad
     var i, len, dragonball,
@@ -391,9 +327,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
         length,
         i;
 
-
-- Assign variables at the top of their scope. This helps avoid issues with variable declaration and assignment hoisting related issues.
-
+Assign variables at the top of their scope. This helps avoid issues with variable declaration and assignment hoisting related issues.
 
     // bad
     function() {
@@ -448,15 +382,9 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
       return true;
     }
-
-
-
-
 
 ## Hoisting
-
-- Variable declarations get hoisted to the top of their scope, their assignment does not.
-
+Variable declarations get hoisted to the top of their scope, their assignment does not.
 
     // we know this wouldn't work (assuming there
     // is no notDefined global variable)
@@ -482,9 +410,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       declaredButNotAssigned = true;
     }
 
-
-- Anonymous function expressions hoist their variable name, but not the function assignment.
-
+Anonymous function expressions hoist their variable name, but not the function assignment.
 
     function example() {
       console.log(anonymous); // => undefined
@@ -496,9 +422,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       };
     }
 
-
-- Named function expressions hoist the variable name, not the function name or the function body.
-
+Named function expressions hoist the variable name, not the function name or the function body.
 
     function example() {
       console.log(named); // => undefined
@@ -524,9 +448,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       }
     }
 
-
-- Function declarations hoist their name and the function body.
-
+Function declarations hoist their name and the function body.
 
     function example() {
       superPower(); // => Flying
@@ -536,24 +458,17 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       }
     }
 
-
-- For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) by [Ben Cherry](http://www.adequatelygood.com/)
-
-
-
-
+For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) by [Ben Cherry](http://www.adequatelygood.com/)
 
 ## Conditional Expressions & Equality
+Use `===` and `!==` over `==` and `!=`.Conditional expressions are evaluated using coercion with the `ToBoolean` method and always follow these simple rules:
 
-- Use `===` and `!==` over `==` and `!=`.
-- Conditional expressions are evaluated using coercion with the `ToBoolean` method and always follow these simple rules:
-
-    + **Objects** evaluate to **true**
-    + **Undefined** evaluates to **false**
-    + **Null** evaluates to **false**
-    + **Booleans** evaluate to **the value of the boolean**
-    + **Numbers** evaluate to **false** if **+0, -0, or NaN**, otherwise **true**
-    + **Strings** evaluate to **false** if an empty string `''`, otherwise **true**
+    - **Objects** evaluate to **true**
+    - **Undefined** evaluates to **false**
+    - **Null** evaluates to **false**
+    - **Booleans** evaluate to **the value of the boolean**
+    - **Numbers** evaluate to **false** if **+0, -0, or NaN**, otherwise **true**
+    - **Strings** evaluate to **false** if an empty string `''`, otherwise **true**
 
 
     if ([0]) {
@@ -561,9 +476,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       // An array is an object, objects evaluate to true
     }
 
-
-- Use shortcuts.
-
+Use shortcuts.
 
     // bad
     if (name !== '') {
@@ -585,16 +498,10 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       // ...stuff...
     }
 
-
-- For more information see [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll
-
-
-
+For more information see [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll
 
 ## Blocks
-
-- Use braces with all multi-line blocks.
-
+Use braces with all multi-line blocks.
 
     // bad
     if (test)
@@ -616,14 +523,8 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       return false;
     }
 
-
-
-
-
 ## Comments
-
-- Use `/** ... */` for multiline comments. Include a description, specify types and values for all parameters and return values.
-
+Use `/** ... */` for multiline comments. Include a description, specify types and values for all parameters and return values.
 
     // bad
     // make() returns a new element
@@ -653,9 +554,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       return element;
     }
 
-
-- Use `//` for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment.
-
+Use `//` for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment.
 
     // bad
     var active = true;  // is current tab
@@ -683,10 +582,8 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       return type;
     }
 
-
-- Prefixing your comments with `FIXME` or `TODO` helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME -- need to figure this out` or `TODO -- need to implement`.
-
-- Use `// FIXME:` to annotate problems
+Prefixing your comments with `FIXME` or `TODO` helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME -- need to figure this out` or `TODO -- need to implement`.
+Use `// FIXME:` to annotate problems
 
 
     function Calculator() {
@@ -697,9 +594,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       return this;
     }
 
-
-- Use `// TODO:` to annotate solutions to problems
-
+Use `// TODO:` to annotate solutions to problems
 
     function Calculator() {
 
@@ -708,15 +603,9 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
       return this;
     }
-  ```
-
-
-
 
 ## Whitespace
-
-- Use soft tabs set to 2 spaces
-
+Use soft tabs set to 2 spaces
 
     // bad
     function() {
@@ -733,9 +622,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
     ∙∙var name;
     }
 
-
-- Place 1 space before the leading brace.
-
+Place 1 space before the leading brace.
 
     // bad
     function test(){
@@ -759,9 +646,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       breed: 'Bernese Mountain Dog'
     });
 
-
-- Set off operators with spaces.
-
+Set off operators with spaces.
 
     // bad
     var x=y+5;
@@ -769,9 +654,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
     // good
     var x = y + 5;
 
-
-- Place an empty newline at the end of the file.
-
+Place an empty newline at the end of the file.
 
     // bad
     (function(global) {
@@ -785,10 +668,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       // ...stuff...
     })(this);
 
-
-
-- Use indentation when making long method chains.
-
+Use indentation when making long method chains.
 
     // bad
     $('#items').find('.selected').highlight().end().find('.open').updateCount();
@@ -817,13 +697,8 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
         .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
         .call(tron.led);
 
-
-
-
 ## Commas
-
-- Leading commas: **Nope.**
-
+Leading commas: **Nope.**
 
     // bad
     var once
@@ -851,11 +726,9 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       superPower: 'strength'
     };
 
-
-- Additional trailing comma: **Nope.** This can cause problems with IE6/7 and IE9 if it's in quirksmode. Also, in some implementations of ES3 would add length to an array if it had an additional trailing comma. This was clarified in ES5 ([source](http://es5.github.io/#D)):
+Additional trailing comma: **Nope.** This can cause problems with IE6/7 and IE9 if it's in quirksmode. Also, in some implementations of ES3 would add length to an array if it had an additional trailing comma. This was clarified in ES5 ([source](http://es5.github.io/#D)):
 
   > Edition 5 clarifies the fact that a trailing comma at the end of an ArrayInitialiser does not add to the length of the array. This is not a semantic change from Edition 3 but some implementations may have previously misinterpreted this.
-
 
     // bad
     var hero = {
@@ -879,14 +752,8 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       'Superman'
     ];
 
-
-
-
-
 ## Semicolons
-
-- **Yup.**
-
+**Yup.**
 
     // bad
     (function() {
@@ -906,15 +773,8 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       return name;
     })();
 
-
-
-
-
 ## Type Casting & Coercion
-
-- Perform type coercion at the beginning of the statement.
-- Strings:
-
+Perform type coercion at the beginning of the statement.Strings:
 
     //  => this.reviewScore = 9;
 
@@ -930,9 +790,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
     // good
     var totalScore = this.reviewScore + ' total score';
 
-
-- Use `parseInt` for Numbers and always with a radix for type casting.
-
+Use `parseInt` for Numbers and always with a radix for type casting.
 
     var inputValue = '4';
 
@@ -954,10 +812,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
     // good
     var val = parseInt(inputValue, 10);
 
-
-- If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use Bitshift for [performance reasons](http://jsperf.com/coercion-vs-casting/3), leave a comment explaining why and what you're doing.
-- **Note:** Be careful when using bitshift operations. Numbers are represented as [64-bit values](http://es5.github.io/#x4.3.19), but Bitshift operations always return a 32-bit integer ([source](http://es5.github.io/#x11.7)). Bitshift can lead to unexpected behavior for integer values larger than 32 bits. [Discussion](https://github.com/airbnb/javascript/issues/109)
-
+If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use Bitshift for [performance reasons](http://jsperf.com/coercion-vs-casting/3), leave a comment explaining why and what you're doing.**Note:** Be careful when using bitshift operations. Numbers are represented as [64-bit values](http://es5.github.io/#x4.3.19), but Bitshift operations always return a 32-bit integer ([source](http://es5.github.io/#x11.7)). Bitshift can lead to unexpected behavior for integer values larger than 32 bits. [Discussion](https://github.com/airbnb/javascript/issues/109)
 
     // good
     /**
@@ -967,9 +822,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
      */
     var val = inputValue >> 0;
 
-
-- Booleans:
-
+Booleans:
 
     var age = 0;
 
@@ -982,14 +835,8 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
     // good
     var hasAge = !!age;
 
-
-
-
-
 ## Naming Conventions
-
-- Avoid single letter names. Be descriptive with your naming.
-
+Avoid single letter names. Be descriptive with your naming.
 
     // bad
     function q() {
@@ -1001,9 +848,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       // ..stuff..
     }
 
-
-- Use camelCase when naming objects, functions, and instances
-
+Use camelCase when naming objects, functions, and instances
 
     // bad
     var OBJEcttsssss = {};
@@ -1020,9 +865,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       name: 'Bob Parr'
     });
 
-
-- Use PascalCase when naming constructors or classes
-
+Use PascalCase when naming constructors or classes
 
     // bad
     function user(options) {
@@ -1042,9 +885,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       name: 'yup'
     });
 
-
-- Use a leading underscore `_` when naming private properties
-
+Use a leading underscore `_` when naming private properties
 
     // bad
     this.__firstName__ = 'Panda';
@@ -1053,9 +894,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
     // good
     this._firstName = 'Panda';
 
-
-- When saving a reference to `this` use `_this`.
-
+When saving a reference to `this` use `_this`.
 
     // bad
     function() {
@@ -1081,9 +920,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       };
     }
 
-
-- Name your functions. This is helpful for stack traces.
-
+Name your functions. This is helpful for stack traces.
 
     // bad
     var log = function(msg) {
@@ -1095,15 +932,8 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       console.log(msg);
     };
 
-
-
-
-
 ## Accessors
-
-- Accessor functions for properties are not required
-- If you do make accessor functions use getVal() and setVal('hello')
-
+Accessor functions for properties are not requiredIf you do make accessor functions use getVal() and setVal('hello')
 
     // bad
     dragon.age();
@@ -1117,9 +947,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
     // good
     dragon.setAge(25);
 
-
-- If the property is a boolean, use isVal() or hasVal()
-
+If the property is a boolean, use isVal() or hasVal()
 
     // bad
     if (!dragon.age()) {
@@ -1131,9 +959,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       return false;
     }
 
-
-- It's okay to create get() and set() functions, but be consistent.
-
+It's okay to create get() and set() functions, but be consistent.
 
     function Jedi(options) {
       options || (options = {});
@@ -1149,14 +975,8 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       return this[key];
     };
 
-
-
-
-
 ## Constructors
-
-- Assign methods to the prototype object, instead of overwriting the prototype with a new object. Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
-
+Assign methods to the prototype object, instead of overwriting the prototype with a new object. Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
 
     function Jedi() {
       console.log('new jedi');
@@ -1182,9 +1002,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       console.log('blocking');
     };
 
-
-- Methods can return `this` to help with method chaining.
-
+Methods can return `this` to help with method chaining.
 
     // bad
     Jedi.prototype.jump = function() {
@@ -1216,10 +1034,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
     luke.jump()
       .setHeight(20);
 
-
-
-- It's okay to write a custom toString() method, just make sure it works successfully and causes no side effects.
-
+It's okay to write a custom toString() method, just make sure it works successfully and causes no side effects.
 
     function Jedi(options) {
       options || (options = {});
@@ -1234,14 +1049,8 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       return 'Jedi - ' + this.getName();
     };
 
-
-
-
-
 ## Events
-
-- When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
-
+When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
 
     // bad
     $(this).trigger('listingUpdated', listing.id);
@@ -1265,17 +1074,8 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       // do something with data.listingId
     });
 
-
-  
-
-
 ## Modules
-
-- The module should start with a `!`. This ensures that if a malformed module forgets to include a final semicolon there aren't errors in production when the scripts get concatenated. [Explanation](https://github.com/airbnb/javascript/issues/44#issuecomment-13063933)
-- The file should be named with camelCase, live in a folder with the same name, and match the name of the single export.
-- Add a method called noConflict() that sets the exported module to the previous version and returns this one.
-- Always declare `'use strict';` at the top of the module.
-
+The module should start with a `!`. This ensures that if a malformed module forgets to include a final semicolon there aren't errors in production when the scripts get concatenated. [Explanation](https://github.com/airbnb/javascript/issues/44#issuecomment-13063933)The file should be named with camelCase, live in a folder with the same name, and match the name of the single export.Add a method called noConflict() that sets the exported module to the previous version and returns this one.Always declare `'use strict';` at the top of the module.
 
     // fancyInput/fancyInput.js
 
@@ -1296,14 +1096,8 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       global.FancyInput = FancyInput;
     }(this);
 
-
-
-
-
 ## jQuery
-
-- Prefix jQuery object variables with a $.
-
+Prefix jQuery object variables with a $.
 
     // bad
     var sidebar = $('.sidebar');
@@ -1311,9 +1105,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
     // good
     var $sidebar = $('.sidebar');
 
-
-- Cache jQuery lookups.
-
+Cache jQuery lookups.
 
     // bad
     function setSidebar() {
@@ -1338,10 +1130,8 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
       });
     }
 
-
-- For DOM queries use Cascading `$('.sidebar ul')` or parent > child `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
+For DOM queries use Cascading `$('.sidebar ul')` or parent > child `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
 Use `find` with scoped jQuery object queries.
-
 
     // bad
     $('ul', '.sidebar').hide();
@@ -1357,4 +1147,3 @@ Use `find` with scoped jQuery object queries.
 
     // good
     $sidebar.find('ul').hide();
-
