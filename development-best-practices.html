@@ -1116,9 +1116,11 @@ function setSidebar() {
     &#39;background-color&#39;: &#39;pink&#39;
   });
 }</code></pre>
-        <p>For DOM queries use Cascading <code>$(&#39;.sidebar ul&#39;)</code> or parent &gt; child <code>$(&#39;.sidebar &gt; ul&#39;)</code>.
-          <a href="http://jsperf.com/jquery-find-vs-context-sel/16">jsPerf</a>
-          Use <code>find</code> with scoped jQuery object queries.</p>
+        <ul>
+          <li>For DOM queries use Cascading <code>$(&#39;.sidebar ul&#39;)</code> or parent &gt; child <code>$(&#39;.sidebar &gt; ul&#39;)</code>.
+            <a href="http://jsperf.com/jquery-find-vs-context-sel/16">jsPerf</a>
+            Use <code>find</code> with scoped jQuery object queries.</li>
+        </ul>
         <pre><code>// bad
 $(&#39;ul&#39;, &#39;.sidebar&#39;).hide();
 // bad
