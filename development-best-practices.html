@@ -48,7 +48,6 @@
         <hr/>
       </div>
       <div class="large-12 columns">
-        <h1 id="javascript-development-best-practices-">JavaScript Development Best Practices:</h1>
         <h2 id="compiling-minification">Compiling &amp; minification</h2>
         <p>Always minify or compile your customer-facing code, even if it’s just simple minification with pretty-printing.</p>
         <h2 id="globals">Globals</h2>
@@ -67,9 +66,7 @@
           <li>Optional parameters go last</li>
           <li>If there’s more than a single optional parameter, supply the values as an object with the optional values as parameters of that object.</li>
         </ul>
-        <h2 id="-a-name-types-types-a-">
-          <a name='types'>Types</a>
-        </h2>
+        <h2 id="types">Types</h2>
         <ul>
           <li>
             <p><strong>Primitives</strong>: When you access a primitive type you work directly on its value</p>
@@ -108,9 +105,7 @@ console.log(foo, bar); // =&gt; 1, 9</code></pre>
     bar = foo;
 bar[0] = 9;
 console.log(foo[0], bar[0]); // =&gt; 9, 9</code></pre>
-        <h2 id="-a-name-objects-objects-a-">
-          <a name='objects'>Objects</a>
-        </h2>
+        <h2 id="objects">Objects</h2>
         <ul>
           <li>Use the literal syntax for object creation.</li>
         </ul>
@@ -149,9 +144,7 @@ var superman = {
 var superman = {
   type: &#39;alien&#39;
 };</code></pre>
-        <h2 id="-a-name-arrays-arrays-a-">
-          <a name='arrays'>Arrays</a>
-        </h2>
+        <h2 id="arrays">Arrays</h2>
         <ul>
           <li>Use the literal syntax for array creation</li>
         </ul>
@@ -188,9 +181,7 @@ itemsCopy = items.slice();</code></pre>
   var args = Array.prototype.slice.call(arguments);
   ...
 }</code></pre>
-        <h2 id="-a-name-strings-strings-a-">
-          <a name='strings'>Strings</a>
-        </h2>
+        <h2 id="strings">Strings</h2>
         <ul>
           <li>Use single quotes <code>&#39;&#39;</code> for strings</li>
         </ul>
@@ -246,11 +237,11 @@ messages = [{
 length = messages.length;
 // bad
 function inbox(messages) {
-  items = &#39;&lt;ul&gt;&#39;;
+  items = &#39;&#39;;
   for (i = 0; i &lt; length; i++) {
-    items += &#39;&lt;li&gt;&#39; + messages[i].message + &#39;&lt;/li&gt;&#39;;
+    items += &#39;&#39; + messages[i].message + &#39;&#39;;
   }
-  return items + &#39;&lt;/ul&gt;&#39;;
+  return items + &#39;&#39;;
 }
 // good
 function inbox(messages) {
@@ -258,11 +249,9 @@ function inbox(messages) {
   for (i = 0; i &lt; length; i++) {
     items[i] = messages[i].message;
   }
-  return &#39;&lt;ul&gt;&lt;li&gt;&#39; + items.join(&#39;&lt;/li&gt;&lt;li&gt;&#39;) + &#39;&lt;/li&gt;&lt;/ul&gt;&#39;;
+  return &#39;&#39; + items.join(&#39;&#39;) + &#39;&#39;;
 }</code></pre>
-        <h2 id="-a-name-functions-functions-a-">
-          <a name='functions'>Functions</a>
-        </h2>
+        <h2 id="functions">Functions</h2>
         <ul>
           <li>Function expressions:</li>
         </ul>
@@ -307,9 +296,7 @@ function nope(name, options, arguments) {
 function yup(name, options, args) {
   // ...stuff...
 }</code></pre>
-        <h2 id="-a-name-properties-properties-a-">
-          <a name='properties'>Properties</a>
-        </h2>
+        <h2 id="properties">Properties</h2>
         <ul>
           <li>Use dot notation when accessing properties.</li>
         </ul>
@@ -332,9 +319,7 @@ function getProp(prop) {
   return luke[prop];
 }
 var isJedi = getProp(&#39;jedi&#39;);</code></pre>
-        <h2 id="-a-name-variables-variables-a-">
-          <a name='variables'>Variables</a>
-        </h2>
+        <h2 id="variables">Variables</h2>
         <ul>
           <li>Always use <code>var</code> to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that.</li>
         </ul>
@@ -412,9 +397,7 @@ function() {
   var name = getName();
   return true;
 }</code></pre>
-        <h2 id="-a-name-hoisting-hoisting-a-">
-          <a name='hoisting'>Hoisting</a>
-        </h2>
+        <h2 id="hoisting">Hoisting</h2>
         <ul>
           <li>Variable declarations get hoisted to the top of their scope, their assignment does not.</li>
         </ul>
@@ -484,9 +467,7 @@ function example() {
             <a href="http://www.adequatelygood.com/">Ben Cherry</a>
           </li>
         </ul>
-        <h2 id="-a-name-conditionals-conditional-expressions-equality-a-">
-          <a name='conditionals'>Conditional Expressions &amp; Equality</a>
-        </h2>
+        <h2 id="conditional-expressions-equality">Conditional Expressions &amp; Equality</h2>
         <ul>
           <li>Use <code>===</code> and <code>!==</code> over <code>==</code> and <code>!=</code>.</li>
           <li>
@@ -534,9 +515,7 @@ if (collection.length) {
           <li>For more information see
             <a href="http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108">Truth Equality and JavaScript</a>by Angus Croll</li>
         </ul>
-        <h2 id="-a-name-blocks-blocks-a-">
-          <a name='blocks'>Blocks</a>
-        </h2>
+        <h2 id="blocks">Blocks</h2>
         <ul>
           <li>Use braces with all multi-line blocks.</li>
         </ul>
@@ -555,9 +534,7 @@ function() { return false; }
 function() {
   return false;
 }</code></pre>
-        <h2 id="-a-name-comments-comments-a-">
-          <a name='comments'>Comments</a>
-        </h2>
+        <h2 id="comments">Comments</h2>
         <ul>
           <li>Use <code>/** ... */</code> for multiline comments. Include a description, specify types and values for all parameters and return values.</li>
         </ul>
@@ -565,8 +542,8 @@ function() {
 // make() returns a new element
 // based on the passed in tag name
 //
-// @param &lt;String&gt; tag
-// @return &lt;Element&gt; element
+// @param  tag
+// @return  element
 function make(tag) {
   // ...stuff...
   return element;
@@ -576,8 +553,8 @@ function make(tag) {
  * make() returns a new element
  * based on the passed in tag name
  *
- * @param &lt;String&gt; tag
- * @return &lt;Element&gt; element
+ * @param  tag
+ * @return  element
  */
 function make(tag) {
   // ...stuff...
@@ -628,9 +605,7 @@ function getType() {
   return this;
 }</code></pre>
         <p>```</p>
-        <h2 id="-a-name-whitespace-whitespace-a-">
-          <a name='whitespace'>Whitespace</a>
-        </h2>
+        <h2 id="whitespace">Whitespace</h2>
         <ul>
           <li>Use soft tabs set to 2 spaces</li>
         </ul>
@@ -711,9 +686,7 @@ var leds = stage.selectAll(&#39;.led&#39;)
   .append(&#39;svg:g&#39;)
     .attr(&#39;transform&#39;, &#39;translate(&#39; + (radius + margin) + &#39;,&#39; + (radius + margin) + &#39;)&#39;)
     .call(tron.led);</code></pre>
-        <h2 id="-a-name-commas-commas-a-">
-          <a name='commas'>Commas</a>
-        </h2>
+        <h2 id="commas">Commas</h2>
         <ul>
           <li>Leading commas: <strong>Nope.</strong>
           </li>
@@ -768,9 +741,7 @@ var heroes = [
   &#39;Batman&#39;,
   &#39;Superman&#39;
 ];</code></pre>
-        <h2 id="-a-name-semicolons-semicolons-a-">
-          <a name='semicolons'>Semicolons</a>
-        </h2>
+        <h2 id="semicolons">Semicolons</h2>
         <ul>
           <li><strong>Yup.</strong>
           </li>
@@ -790,9 +761,7 @@ var heroes = [
   var name = &#39;Skywalker&#39;;
   return name;
 })();</code></pre>
-        <h2 id="-a-name-type-coercion-type-casting-coercion-a-">
-          <a name='type-coercion'>Type Casting &amp; Coercion</a>
-        </h2>
+        <h2 id="type-casting-coercion">Type Casting &amp; Coercion</h2>
         <ul>
           <li>Perform type coercion at the beginning of the statement.</li>
           <li>Strings:</li>
@@ -848,9 +817,7 @@ var hasAge = new Boolean(age);
 var hasAge = Boolean(age);
 // good
 var hasAge = !!age;</code></pre>
-        <h2 id="-a-name-naming-conventions-naming-conventions-a-">
-          <a name='naming-conventions'>Naming Conventions</a>
-        </h2>
+        <h2 id="naming-conventions">Naming Conventions</h2>
         <ul>
           <li>Avoid single letter names. Be descriptive with your naming.</li>
         </ul>
@@ -938,9 +905,7 @@ var log = function(msg) {
 var log = function log(msg) {
   console.log(msg);
 };</code></pre>
-        <h2 id="-a-name-accessors-accessors-a-">
-          <a name='accessors'>Accessors</a>
-        </h2>
+        <h2 id="accessors">Accessors</h2>
         <ul>
           <li>Accessor functions for properties are not required</li>
           <li>If you do make accessor functions use getVal() and setVal(&#39;hello&#39;)</li>
@@ -978,9 +943,7 @@ Jedi.prototype.set = function(key, val) {
 Jedi.prototype.get = function(key) {
   return this[key];
 };</code></pre>
-        <h2 id="-a-name-constructors-constructors-a-">
-          <a name='constructors'>Constructors</a>
-        </h2>
+        <h2 id="constructors">Constructors</h2>
         <ul>
           <li>Assign methods to the prototype object, instead of overwriting the prototype with a new object. Overwriting the prototype makes inheritance impossible: by resetting the prototype you&#39;ll overwrite the base!</li>
         </ul>
@@ -1042,9 +1005,7 @@ Jedi.prototype.getName = function getName() {
 Jedi.prototype.toString = function toString() {
   return &#39;Jedi - &#39; + this.getName();
 };</code></pre>
-        <h2 id="-a-name-events-events-a-">
-          <a name='events'>Events</a>
-        </h2>
+        <h2 id="events">Events</h2>
         <ul>
           <li>When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and
             updating every handler for the event. For example, instead of:</li>
@@ -1062,9 +1023,7 @@ $(this).trigger(&#39;listingUpdated&#39;, { listingId : listing.id });
 $(this).on(&#39;listingUpdated&#39;, function(e, data) {
   // do something with data.listingId
 });</code></pre>
-        <h2 id="-a-name-modules-modules-a-">
-          <a name='modules'>Modules</a>
-        </h2>
+        <h2 id="modules">Modules</h2>
         <ul>
           <li>The module should start with a <code>!</code>. This ensures that if a malformed module forgets to include a final semicolon there aren&#39;t errors in production when the scripts get concatenated.
             <a href="https://github.com/airbnb/javascript/issues/44#issuecomment-13063933">Explanation</a>
@@ -1086,9 +1045,7 @@ $(this).on(&#39;listingUpdated&#39;, function(e, data) {
   };
   global.FancyInput = FancyInput;
 }(this);</code></pre>
-        <h2 id="-a-name-jquery-jquery-a-">
-          <a name='jquery'>jQuery</a>
-        </h2>
+        <h2 id="jquery">jQuery</h2>
         <ul>
           <li>Prefix jQuery object variables with a $.</li>
         </ul>

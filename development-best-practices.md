@@ -1,7 +1,6 @@
 ---
-title: ActiveText Demo website
+title: JavaScript Development Best Practices
 ---
-#JavaScript Development Best Practices:
 
 ##Compiling & minification
 Always minify or compile your customer-facing code, even if it’s just simple minification with pretty-printing.
@@ -25,7 +24,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 - Optional parameters go last
 - If there’s more than a single optional parameter, supply the values as an object with the optional values as parameters of that object.
 
-## <a name='types'>Types</a>
+## Types
 
 - **Primitives**: When you access a primitive type you work directly on its value
 
@@ -60,7 +59,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
 
 
-## <a name='objects'>Objects</a>
+## Objects
 
 - Use the literal syntax for object creation.
 
@@ -108,7 +107,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
 
 
-## <a name='arrays'>Arrays</a>
+## Arrays
 
 - Use the literal syntax for array creation
 
@@ -161,7 +160,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
 
 
-## <a name='strings'>Strings</a>
+## Strings
 
 - Use single quotes `''` for strings
 
@@ -227,13 +226,13 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
     // bad
     function inbox(messages) {
-      items = '<ul>';
+      items = '';
 
       for (i = 0; i < length; i++) {
-        items += '<li>' + messages[i].message + '</li>';
+        items += '' + messages[i].message + '';
       }
 
-      return items + '</ul>';
+      return items + '';
     }
 
     // good
@@ -244,14 +243,14 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
         items[i] = messages[i].message;
       }
 
-      return '<ul><li>' + items.join('</li><li>') + '</li></ul>';
+      return '' + items.join('') + '';
     }
 
 
 
 
 
-## <a name='functions'>Functions</a>
+## Functions
 
 - Function expressions:
 
@@ -310,7 +309,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
 
 
-## <a name='properties'>Properties</a>
+## Properties
 
 - Use dot notation when accessing properties.
 
@@ -345,7 +344,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
 
 
-## <a name='variables'>Variables</a>
+## Variables
 
 - Always use `var` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that.
 
@@ -454,7 +453,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
 
 
-## <a name='hoisting'>Hoisting</a>
+## Hoisting
 
 - Variable declarations get hoisted to the top of their scope, their assignment does not.
 
@@ -544,7 +543,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
 
 
-## <a name='conditionals'>Conditional Expressions & Equality</a>
+## Conditional Expressions & Equality
 
 - Use `===` and `!==` over `==` and `!=`.
 - Conditional expressions are evaluated using coercion with the `ToBoolean` method and always follow these simple rules:
@@ -592,7 +591,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
 
 
-## <a name='blocks'>Blocks</a>
+## Blocks
 
 - Use braces with all multi-line blocks.
 
@@ -621,7 +620,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
 
 
-## <a name='comments'>Comments</a>
+## Comments
 
 - Use `/** ... */` for multiline comments. Include a description, specify types and values for all parameters and return values.
 
@@ -630,8 +629,8 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
     // make() returns a new element
     // based on the passed in tag name
     //
-    // @param <String> tag
-    // @return <Element> element
+    // @param  tag
+    // @return  element
     function make(tag) {
 
       // ...stuff...
@@ -644,8 +643,8 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
      * make() returns a new element
      * based on the passed in tag name
      *
-     * @param <String> tag
-     * @return <Element> element
+     * @param  tag
+     * @return  element
      */
     function make(tag) {
 
@@ -714,7 +713,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
 
 
-## <a name='whitespace'>Whitespace</a>
+## Whitespace
 
 - Use soft tabs set to 2 spaces
 
@@ -821,7 +820,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
 
 
-## <a name='commas'>Commas</a>
+## Commas
 
 - Leading commas: **Nope.**
 
@@ -884,7 +883,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
 
 
-## <a name='semicolons'>Semicolons</a>
+## Semicolons
 
 - **Yup.**
 
@@ -911,7 +910,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
 
 
-## <a name='type-coercion'>Type Casting & Coercion</a>
+## Type Casting & Coercion
 
 - Perform type coercion at the beginning of the statement.
 - Strings:
@@ -987,7 +986,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
 
 
-## <a name='naming-conventions'>Naming Conventions</a>
+## Naming Conventions
 
 - Avoid single letter names. Be descriptive with your naming.
 
@@ -1100,7 +1099,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
 
 
-## <a name='accessors'>Accessors</a>
+## Accessors
 
 - Accessor functions for properties are not required
 - If you do make accessor functions use getVal() and setVal('hello')
@@ -1154,7 +1153,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
 
 
-## <a name='constructors'>Constructors</a>
+## Constructors
 
 - Assign methods to the prototype object, instead of overwriting the prototype with a new object. Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
 
@@ -1239,7 +1238,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
 
 
-## <a name='events'>Events</a>
+## Events
 
 - When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
 
@@ -1270,7 +1269,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
   
 
 
-## <a name='modules'>Modules</a>
+## Modules
 
 - The module should start with a `!`. This ensures that if a malformed module forgets to include a final semicolon there aren't errors in production when the scripts get concatenated. [Explanation](https://github.com/airbnb/javascript/issues/44#issuecomment-13063933)
 - The file should be named with camelCase, live in a folder with the same name, and match the name of the single export.
@@ -1301,7 +1300,7 @@ Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpr
 
 
 
-## <a name='jquery'>jQuery</a>
+## jQuery
 
 - Prefix jQuery object variables with a $.
 
