@@ -2,33 +2,42 @@
 title: JavaScript Development Best Practices
 ---
 
-##Compiling & minification
+
+## <a name='compiling' data-magellan-destination='compiling'></a>Compiling & minification
 Always minify or compile your customer-facing code, even if it’s just simple minification with pretty-printing.
 
-##Globals
+<div data-magellan-expedition="fixed" data-magellan-top-offset="45">
+  <dl class="sub-nav">
+    <dd data-magellan-arrival="compiling"><a href="#compiling">Build with HTML</a></dd>
+    <dd data-magellan-arrival="globals"><a href="#globals">Arrival 2</a></dd>
+    <dd data-magellan-arrival="strict"><a href="#strict">Arrival 2</a></dd>
+  </dl>
+</div>
+
+## <a name='globals' data-magellan-destination='globals'></a>Globals
 Don’t use globals. “Global name conflicts are difficult to debug, and can cause intractable problems when two projects try to integrate. In order to make it possible to share common JavaScript code, we’ve adopted conventions to prevent collisions.”
 
-##Be Strict
+## <a name='strict' data-magellan-destination='strict'></a>Be Strict
 In any kind of JavaScript file it is also good to add the declaration:
 
     'use strict';
 
 This will affect both JSHint and your JavaScript engine, which will become less compliant but run your JavaScript faster.
 
-##Check for absolute equality
+## <a name='Check'></a>Check for absolute equality
 Use `===` and `!==` instead of `==` and `!=`. See http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/ for more information on exactly why you should do this.
 
-##Function parameters - required & optional values
+## <a name='Function'></a>Function parameters - required & optional values
 Keep the number of parameters required by a method to a minimumRequired parameters go firstOptional parameters go lastIf there’s more than a single optional parameter, supply the values as an object with the optional values as parameters of that object.
 
-## Types
+## <a name='Types'></a>Types
 **Primitives**: When you access a primitive type you work directly on its value
 
-    - `string`
-    - `number`
-    - `boolean`
-    - `null`
-    - `undefined`
+- `string`
+- `number`
+- `boolean`
+- `null`
+- `undefined`
 
 
     var foo = 1,
@@ -40,9 +49,9 @@ Keep the number of parameters required by a method to a minimumRequired paramete
 
 **Complex**: When you access a complex type you work on a reference to its value
 
-    - `object`
-    - `array`
-    - `function`
+- `object`
+- `array`
+- `function`
 
 
     var foo = [1, 2],
@@ -52,7 +61,7 @@ Keep the number of parameters required by a method to a minimumRequired paramete
 
     console.log(foo[0], bar[0]); // => 9, 9
 
-## Objects
+## <a name='Objects'></a>Objects
 Use the literal syntax for object creation.
 
     // bad
@@ -92,7 +101,7 @@ Use readable synonyms in place of reserved words.
       type: 'alien'
     };
 
-## Arrays
+## <a name='Arrays'></a>Arrays
 Use the literal syntax for array creation
 
     // bad
@@ -133,7 +142,7 @@ To convert an array-like object to an array, use Array#slice.
       ...
     }
 
-## Strings
+## <a name='Strings'></a>Strings
 Use single quotes `''` for strings
 
     // bad
@@ -212,7 +221,7 @@ When programatically building up a string, use Array#join instead of string conc
       return '' + items.join('') + '';
     }
 
-## Functions
+## <a name='Functions'></a>Functions
 Function expressions:
 
     // anonymous function expression
@@ -259,7 +268,7 @@ Never name a parameter `arguments`, this will take precedence over the `argument
       // ...stuff...
     }
 
-## Properties
+## <a name='Properties'></a>Properties
 Use dot notation when accessing properties.
 
     var luke = {
@@ -286,7 +295,7 @@ Use subscript notation `[]` when accessing properties with a variable.
 
     var isJedi = getProp('jedi');
 
-## Variables
+## <a name='Variables'></a>Variables
 Always use `var` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that.
 
     // bad
@@ -383,7 +392,7 @@ Assign variables at the top of their scope. This helps avoid issues with variabl
       return true;
     }
 
-## Hoisting
+## <a name='Hoisting'></a>Hoisting
 Variable declarations get hoisted to the top of their scope, their assignment does not.
 
     // we know this wouldn't work (assuming there
@@ -460,15 +469,15 @@ Function declarations hoist their name and the function body.
 
 For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) by [Ben Cherry](http://www.adequatelygood.com/)
 
-## Conditional Expressions & Equality
+## <a name='Conditional'></a>Conditional Expressions & Equality
 Use `===` and `!==` over `==` and `!=`.Conditional expressions are evaluated using coercion with the `ToBoolean` method and always follow these simple rules:
 
-    - **Objects** evaluate to **true**
-    - **Undefined** evaluates to **false**
-    - **Null** evaluates to **false**
-    - **Booleans** evaluate to **the value of the boolean**
-    - **Numbers** evaluate to **false** if **+0, -0, or NaN**, otherwise **true**
-    - **Strings** evaluate to **false** if an empty string `''`, otherwise **true**
+- **Objects** evaluate to **true**
+- **Undefined** evaluates to **false**
+- **Null** evaluates to **false**
+- **Booleans** evaluate to **the value of the boolean**
+- **Numbers** evaluate to **false** if **+0, -0, or NaN**, otherwise **true**
+- **Strings** evaluate to **false** if an empty string `''`, otherwise **true**
 
 
     if ([0]) {
@@ -500,7 +509,7 @@ Use shortcuts.
 
 For more information see [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll
 
-## Blocks
+## <a name='Blocks'></a>Blocks
 Use braces with all multi-line blocks.
 
     // bad
@@ -523,7 +532,7 @@ Use braces with all multi-line blocks.
       return false;
     }
 
-## Comments
+## <a name='Comments'></a>Comments
 Use `/** ... */` for multiline comments. Include a description, specify types and values for all parameters and return values.
 
     // bad
@@ -583,8 +592,8 @@ Use `//` for single line comments. Place single line comments on a newline above
     }
 
 Prefixing your comments with `FIXME` or `TODO` helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME -- need to figure this out` or `TODO -- need to implement`.
-Use `// FIXME:` to annotate problems
 
+Use `// FIXME:` to annotate problems
 
     function Calculator() {
 
@@ -604,7 +613,7 @@ Use `// TODO:` to annotate solutions to problems
       return this;
     }
 
-## Whitespace
+## <a name='Whitespace'></a>Whitespace
 Use soft tabs set to 2 spaces
 
     // bad
@@ -697,7 +706,7 @@ Use indentation when making long method chains.
         .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
         .call(tron.led);
 
-## Commas
+## <a name='Commas'></a>Commas
 Leading commas: **Nope.**
 
     // bad
@@ -752,7 +761,7 @@ Additional trailing comma: **Nope.** This can cause problems with IE6/7 and IE9 
       'Superman'
     ];
 
-## Semicolons
+## <a name='Semicolons'></a>Semicolons
 **Yup.**
 
     // bad
@@ -773,7 +782,7 @@ Additional trailing comma: **Nope.** This can cause problems with IE6/7 and IE9 
       return name;
     })();
 
-## Type Casting & Coercion
+## <a name='Type'></a>Type Casting & Coercion
 Perform type coercion at the beginning of the statement.Strings:
 
     //  => this.reviewScore = 9;
@@ -835,7 +844,7 @@ Booleans:
     // good
     var hasAge = !!age;
 
-## Naming Conventions
+## <a name='Naming'></a>Naming Conventions
 Avoid single letter names. Be descriptive with your naming.
 
     // bad
@@ -932,7 +941,7 @@ Name your functions. This is helpful for stack traces.
       console.log(msg);
     };
 
-## Accessors
+## <a name='Accessors'></a>Accessors
 Accessor functions for properties are not requiredIf you do make accessor functions use getVal() and setVal('hello')
 
     // bad
@@ -975,7 +984,7 @@ It's okay to create get() and set() functions, but be consistent.
       return this[key];
     };
 
-## Constructors
+## <a name='Constructors'></a>Constructors
 Assign methods to the prototype object, instead of overwriting the prototype with a new object. Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
 
     function Jedi() {
@@ -1049,7 +1058,7 @@ It's okay to write a custom toString() method, just make sure it works successfu
       return 'Jedi - ' + this.getName();
     };
 
-## Events
+## <a name='Events'></a>Events
 When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
 
     // bad
@@ -1074,7 +1083,7 @@ When attaching data payloads to events (whether DOM events or something more pro
       // do something with data.listingId
     });
 
-## Modules
+## <a name='Modules'></a>Modules
 The module should start with a `!`. This ensures that if a malformed module forgets to include a final semicolon there aren't errors in production when the scripts get concatenated. [Explanation](https://github.com/airbnb/javascript/issues/44#issuecomment-13063933)The file should be named with camelCase, live in a folder with the same name, and match the name of the single export.Add a method called noConflict() that sets the exported module to the previous version and returns this one.Always declare `'use strict';` at the top of the module.
 
     // fancyInput/fancyInput.js
@@ -1096,7 +1105,7 @@ The module should start with a `!`. This ensures that if a malformed module forg
       global.FancyInput = FancyInput;
     }(this);
 
-## jQuery
+## <a name='jQuery'></a>jQuery
 Prefix jQuery object variables with a $.
 
     // bad
@@ -1131,6 +1140,7 @@ Cache jQuery lookups.
     }
 
 For DOM queries use Cascading `$('.sidebar ul')` or parent > child `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
+
 Use `find` with scoped jQuery object queries.
 
     // bad

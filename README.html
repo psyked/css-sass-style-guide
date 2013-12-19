@@ -9,51 +9,58 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="highlight/highlight.pack.js"></script>
   </head>
-  <body>
-    <div class="fixed">
-      <nav class="top-bar" data-topbar>
-        <ul class="title-area">
-          <li class="name">
-            <h1>
-              <a href="./">
-                <img src="assets/mmt-logo.svg" width="32" height="32" />
-              </a>
-            </h1>
-          </li>
-          <li class="toggle-topbar menu-icon">
-            <a href="#"><span>Menu</span>
-            </a>
-          </li>
-        </ul>
-        <section class="top-bar-section">
+  <body class="antialiased hide-extras">
+    <div class="marketing off-canvas-wrap">
+      <div class="inner-wrap">
+        <div class="contain-to-grid fixed">
+          <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+              <li class="name">
+                <h1>
+                  <a href="./">
+                    <img src="assets/mmt-logo.svg" width="32" height="32" />
+                  </a>
+                </h1>
+              </li>
+              <li class="toggle-topbar menu-icon">
+                <a href="#"><span>Menu</span>
+                </a>
+              </li>
+            </ul>
+            <section class="top-bar-section">
 
-          <!-- Right Nav Section -->
-          <ul class="left">
-            <li class="has-dropdown">
-              <a href="#">JavaScript Style Guide</a>
-              <ul class="dropdown">
-                <li> <a href="summary.html">The short version</a> </li>
-                <li> <a href="formatting.html">Source code formatting</a> </li>
-                <li> <a href="naming-conventions.html">Naming Conventions</a> </li>
-                <li> <a href="development-best-practices.html">JavaScript Best Practices</a> </li>
+              <!-- Right Nav Section -->
+              <ul class="left">
+                <li class="has-dropdown">
+                  <a href="#">JavaScript Style Guide</a>
+                  <ul class="dropdown">
+                    <li> <a href="summary.html">The short version</a> </li>
+                    <li> <a href="formatting.html">Source code formatting</a> </li>
+                    <li> <a href="naming-conventions.html">Naming Conventions</a> </li>
+                    <li> <a href="development-best-practices.html">JavaScript Best Practices</a> </li>
+                  </ul>
+                </li>
               </ul>
-            </li>
-          </ul>
+            </section>
+          </nav>
+        </div>
+        <section role="main">
+          <div class="row">
+            <div class="large-12 columns">
+              <pre><code>                grunt-example-project</code></pre>
+              <p>=====================</p>
+              <p>An example grunt starter project, to use with my presentation.</p>
+            </div>
+          </div>
         </section>
-      </nav>
-    </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <pre><code>    grunt-example-project</code></pre>
-        <p>=====================</p>
-        <p>An example grunt starter project, to use with my presentation.</p>
+        <script src="bower_components/jquery/jquery.min.js"></script>
+        <script src="bower_components/foundation/js/foundation.min.js"></script>
+        <script src="bower_components/foundation/js/foundation/foundation.magellan.js"></script>
+        <script>
+          hljs.initHighlightingOnLoad();
+        </script>
+        <script src="js/app.js"></script>
       </div>
     </div>
-    <script src="bower_components/jquery/jquery.min.js"></script>
-    <script src="bower_components/foundation/js/foundation.min.js"></script>
-    <script>
-      hljs.initHighlightingOnLoad();
-    </script>
-    <script src="js/app.js"></script>
   </body>
 </html>
