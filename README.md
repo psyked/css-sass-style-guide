@@ -1,4 +1,4 @@
-grunt-example-project
-=====================
+MMT Digital's JavaScript style guide
+====================================
 
-An example grunt starter project, to use with my presentation.
+A work in progress! See http://psyked.github.io/js-style-guide/
