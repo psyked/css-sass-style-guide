@@ -9,124 +9,121 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="highlight/highlight.pack.js"></script>
   </head>
-  <body class="antialiased hide-extras">
-    <div class="marketing off-canvas-wrap">
-      <div class="inner-wrap">
-        <div class="contain-to-grid fixed">
-          <nav class="top-bar" data-topbar>
-            <ul class="title-area">
-              <li class="name">
-                <h1>
-                  <a href="./">
-                    <img src="assets/mmt-logo.svg" width="32" height="32" />
-                  </a>
-                </h1>
-              </li>
-              <li class="toggle-topbar menu-icon">
-                <a href="#"><span>Menu</span>
-                </a>
+  <body>
+    <section role="main">
+      <div class="contain-to-grid fixed">
+        <nav class="top-bar" data-topbar>
+          <ul class="title-area">
+            <li class="name">
+              <h1>
+                <a href="./">
+                  <img src="assets/mmt-logo.svg" width="32" height="32" style="margin-right:1em" />JavaScript Style Guide</a>
+              </h1>
+            </li>
+            <li class="toggle-topbar menu-icon">
+              <a href="#"><span>Menu</span>
+              </a>
+            </li>
+          </ul>
+          <section class="top-bar-section">
+
+            <!-- Right Nav Section -->
+            <ul class="left">
+              <li class="has-dropdown">
+                <a href="./">Overview</a>
+                <ul class="dropdown">
+                  <li> <a href="summary.html">The short version</a> </li>
+                  <li> <a href="formatting.html">Source code formatting</a> </li>
+                  <li> <a href="naming-conventions.html">Naming Conventions</a> </li>
+                  <li> <a href="development-best-practices.html">JavaScript Best Practices</a> </li>
+                </ul>
               </li>
             </ul>
-            <section class="top-bar-section">
-
-              <!-- Right Nav Section -->
-              <ul class="left">
-                <li class="has-dropdown">
-                  <a href="#">JavaScript Style Guide</a>
-                  <ul class="dropdown">
-                    <li> <a href="summary.html">The short version</a> </li>
-                    <li> <a href="formatting.html">Source code formatting</a> </li>
-                    <li> <a href="naming-conventions.html">Naming Conventions</a> </li>
-                    <li> <a href="development-best-practices.html">JavaScript Best Practices</a> </li>
-                  </ul>
-                </li>
-              </ul>
-            </section>
-          </nav>
+          </section>
+        </nav>
+      </div>
+      <div class="row">
+        <div class="large-12 columns">
+          <h1>JavaScript Development Best Practices</h1>
+          <hr/>
         </div>
-        <section role="main">
-          <div class="row">
-            <div class="large-12 columns">
-              <h1></h1>
-              <hr/>
-            </div>
-            <div class="large-12 columns">
-              <h2 id="-a-name-compiling-data-magellan-destination-compiling-a-compiling-minification">
-                <a name='compiling' data-magellan-destination='compiling'></a>Compiling &amp; minification</h2>
-              <p>Always minify or compile your customer-facing code, even if it’s just simple minification with pretty-printing.</p>
-              <div data-magellan-expedition="fixed" data-magellan-top-offset="45">
-                <dl class="sub-nav">
-                  <dd data-magellan-arrival="compiling">
-                    <a href="#compiling">Build with HTML</a>
-                  </dd>
-                  <dd data-magellan-arrival="globals">
-                    <a href="#globals">Arrival 2</a>
-                  </dd>
-                  <dd data-magellan-arrival="strict">
-                    <a href="#strict">Arrival 2</a>
-                  </dd>
-                </dl>
-              </div>
-              <h2 id="-a-name-globals-data-magellan-destination-globals-a-globals">
-                <a name='globals' data-magellan-destination='globals'></a>Globals</h2>
-              <p>Don’t use globals. “Global name conflicts are difficult to debug, and can cause intractable problems when two projects try to integrate. In order to make it possible to share common JavaScript code, we’ve adopted conventions to prevent collisions.”</p>
-              <h2 id="-a-name-strict-data-magellan-destination-strict-a-be-strict">
-                <a name='strict' data-magellan-destination='strict'></a>Be Strict</h2>
-              <p>In any kind of JavaScript file it is also good to add the declaration:</p>
-              <pre><code>&#39;use strict&#39;;</code></pre>
-              <p>This will affect both JSHint and your JavaScript engine, which will become less compliant but run your JavaScript faster.</p>
-              <h2 id="-a-name-check-a-check-for-absolute-equality">
-                <a name='Check'></a>Check for absolute equality</h2>
-              <p>Use <code>===</code> and <code>!==</code> instead of <code>==</code> and <code>!=</code>. See
-                <a href="http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/">http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/</a>for more information on exactly why you should do this.</p>
-              <h2 id="-a-name-function-a-function-parameters-required-optional-values">
-                <a name='Function'></a>Function parameters - required &amp; optional values</h2>
-              <p>Keep the number of parameters required by a method to a minimumRequired parameters go firstOptional parameters go lastIf there’s more than a single optional parameter, supply the values as an object with the optional values as parameters
-                of that object.</p>
-              <h2 id="-a-name-types-a-types">
-                <a name='Types'></a>Types</h2>
-              <p><strong>Primitives</strong>: When you access a primitive type you work directly on its value</p>
-              <ul>
-                <li><code>string</code>
-                </li>
-                <li><code>number</code>
-                </li>
-                <li><code>boolean</code>
-                </li>
-                <li><code>null</code>
-                </li>
-                <li><code>undefined</code>
-                </li>
-              </ul>
-              <pre><code>var foo = 1,
+        <div class="large-8 columns">
+          <h2 id="-a-name-compiling-data-magellan-destination-compiling-a-compiling-minification">
+            <a name='compiling' data-magellan-destination='compiling'></a>Compiling &amp; minification</h2>
+          <p>Always minify or compile your customer-facing code, even if it’s just simple minification with pretty-printing.</p>
+          <div data-magellan-expedition="fixed" data-magellan-top-offset="45">
+            <dl class="sub-nav">
+              <dd data-magellan-arrival="compiling">
+                <a href="#compiling">Build with HTML</a>
+              </dd>
+              <dd data-magellan-arrival="globals">
+                <a href="#globals">Arrival 2</a>
+              </dd>
+              <dd data-magellan-arrival="strict">
+                <a href="#strict">Arrival 2</a>
+              </dd>
+            </dl>
+          </div>
+          <h2 id="-a-name-globals-data-magellan-destination-globals-a-globals">
+            <a name='globals' data-magellan-destination='globals'></a>Globals</h2>
+          <p>Don’t use globals. “Global name conflicts are difficult to debug, and can cause intractable problems when two projects try to integrate. In order to make it possible to share common JavaScript code, we’ve adopted conventions to prevent collisions.”</p>
+          <h2 id="-a-name-strict-data-magellan-destination-strict-a-be-strict">
+            <a name='strict' data-magellan-destination='strict'></a>Be Strict</h2>
+          <p>In any kind of JavaScript file it is also good to add the declaration:</p>
+          <pre><code>&#39;use strict&#39;;</code></pre>
+          <p>This will affect both JSHint and your JavaScript engine, which will become less compliant but run your JavaScript faster.</p>
+          <h2 id="-a-name-check-a-check-for-absolute-equality">
+            <a name='Check'></a>Check for absolute equality</h2>
+          <p>Use <code>===</code> and <code>!==</code> instead of <code>==</code> and <code>!=</code>. See
+            <a href="http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/">http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/</a>for more information on exactly why you should do this.</p>
+          <h2 id="-a-name-function-a-function-parameters-required-optional-values">
+            <a name='Function'></a>Function parameters - required &amp; optional values</h2>
+          <p>Keep the number of parameters required by a method to a minimumRequired parameters go firstOptional parameters go lastIf there’s more than a single optional parameter, supply the values as an object with the optional values as parameters of
+            that object.</p>
+          <h2 id="-a-name-types-a-types">
+            <a name='Types'></a>Types</h2>
+          <p><strong>Primitives</strong>: When you access a primitive type you work directly on its value</p>
+          <ul>
+            <li><code>string</code>
+            </li>
+            <li><code>number</code>
+            </li>
+            <li><code>boolean</code>
+            </li>
+            <li><code>null</code>
+            </li>
+            <li><code>undefined</code>
+            </li>
+          </ul>
+          <pre><code>var foo = 1,
     bar = foo;
 bar = 9;
 console.log(foo, bar); // =&gt; 1, 9</code></pre>
-              <p><strong>Complex</strong>: When you access a complex type you work on a reference to its value</p>
-              <ul>
-                <li><code>object</code>
-                </li>
-                <li><code>array</code>
-                </li>
-                <li><code>function</code>
-                </li>
-              </ul>
-              <pre><code>var foo = [1, 2],
+          <p><strong>Complex</strong>: When you access a complex type you work on a reference to its value</p>
+          <ul>
+            <li><code>object</code>
+            </li>
+            <li><code>array</code>
+            </li>
+            <li><code>function</code>
+            </li>
+          </ul>
+          <pre><code>var foo = [1, 2],
     bar = foo;
 bar[0] = 9;
 console.log(foo[0], bar[0]); // =&gt; 9, 9</code></pre>
-              <h2 id="-a-name-objects-a-objects">
-                <a name='Objects'></a>Objects</h2>
-              <p>Use the literal syntax for object creation.</p>
-              <pre><code>// bad
+          <h2 id="-a-name-objects-a-objects">
+            <a name='Objects'></a>Objects</h2>
+          <p>Use the literal syntax for object creation.</p>
+          <pre><code>// bad
 var item = new Object();
 // good
 var item = {};</code></pre>
-              <p>Don&#39;t use
-                <a href="http://es5.github.io/#x7.6.1">reserved words</a>as keys. It won&#39;t work in IE8.
-                <a href="https://github.com/airbnb/javascript/issues/61">More info</a>
-              </p>
-              <pre><code>// bad
+          <p>Don&#39;t use
+            <a href="http://es5.github.io/#x7.6.1">reserved words</a>as keys. It won&#39;t work in IE8.
+            <a href="https://github.com/airbnb/javascript/issues/61">More info</a>
+          </p>
+          <pre><code>// bad
 var superman = {
   default: { clark: &#39;kent&#39; },
   private: true
@@ -136,8 +133,8 @@ var superman = {
   defaults: { clark: &#39;kent&#39; },
   hidden: true
 };</code></pre>
-              <p>Use readable synonyms in place of reserved words.</p>
-              <pre><code>// bad
+          <p>Use readable synonyms in place of reserved words.</p>
+          <pre><code>// bad
 var superman = {
   class: &#39;alien&#39;
 };
@@ -149,23 +146,23 @@ var superman = {
 var superman = {
   type: &#39;alien&#39;
 };</code></pre>
-              <h2 id="-a-name-arrays-a-arrays">
-                <a name='Arrays'></a>Arrays</h2>
-              <p>Use the literal syntax for array creation</p>
-              <pre><code>// bad
+          <h2 id="-a-name-arrays-a-arrays">
+            <a name='Arrays'></a>Arrays</h2>
+          <p>Use the literal syntax for array creation</p>
+          <pre><code>// bad
 var items = new Array();
 // good
 var items = [];</code></pre>
-              <p>If you don&#39;t know array length use Array#push.</p>
-              <pre><code>var someStack = [];
+          <p>If you don&#39;t know array length use Array#push.</p>
+          <pre><code>var someStack = [];
 // bad
 someStack[someStack.length] = &#39;abracadabra&#39;;
 // good
 someStack.push(&#39;abracadabra&#39;);</code></pre>
-              <p>When you need to copy an array use Array#slice.
-                <a href="http://jsperf.com/converting-arguments-to-an-array/7">jsPerf</a>
-              </p>
-              <pre><code>var len = items.length,
+          <p>When you need to copy an array use Array#slice.
+            <a href="http://jsperf.com/converting-arguments-to-an-array/7">jsPerf</a>
+          </p>
+          <pre><code>var len = items.length,
     itemsCopy = [],
     i;
 // bad
@@ -174,15 +171,15 @@ for (i = 0; i &lt; len; i++) {
 }
 // good
 itemsCopy = items.slice();</code></pre>
-              <p>To convert an array-like object to an array, use Array#slice.</p>
-              <pre><code>function trigger() {
+          <p>To convert an array-like object to an array, use Array#slice.</p>
+          <pre><code>function trigger() {
   var args = Array.prototype.slice.call(arguments);
   ...
 }</code></pre>
-              <h2 id="-a-name-strings-a-strings">
-                <a name='Strings'></a>Strings</h2>
-              <p>Use single quotes <code>&#39;&#39;</code> for strings</p>
-              <pre><code>// bad
+          <h2 id="-a-name-strings-a-strings">
+            <a name='Strings'></a>Strings</h2>
+          <p>Use single quotes <code>&#39;&#39;</code> for strings</p>
+          <pre><code>// bad
 var name = &quot;Bob Parr&quot;;
 // good
 var name = &#39;Bob Parr&#39;;
@@ -190,11 +187,11 @@ var name = &#39;Bob Parr&#39;;
 var fullName = &quot;Bob &quot; + this.lastName;
 // good
 var fullName = &#39;Bob &#39; + this.lastName;</code></pre>
-              <p>Strings longer than 80 characters should be written across multiple lines using string concatenation.Note: If overused, long strings with concatenation could impact performance.
-                <a href="http://jsperf.com/ya-string-concat">jsPerf</a>&amp;
-                <a href="https://github.com/airbnb/javascript/issues/40">Discussion</a>
-              </p>
-              <pre><code>// bad
+          <p>Strings longer than 80 characters should be written across multiple lines using string concatenation.Note: If overused, long strings with concatenation could impact performance.
+            <a href="http://jsperf.com/ya-string-concat">jsPerf</a>&amp;
+            <a href="https://github.com/airbnb/javascript/issues/40">Discussion</a>
+          </p>
+          <pre><code>// bad
 var errorMessage = &#39;This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.&#39;;
 // bad
 var errorMessage = &#39;This is a super long error that \
@@ -210,9 +207,9 @@ var errorMessage = &#39;This is a super long error that &#39; +
   &#39;how Batman had anything to do &#39; +
   &#39;with this, you would get nowhere &#39; +
   &#39;fast.&#39;;</code></pre>
-              <p>When programatically building up a string, use Array#join instead of string concatenation. Mostly for IE:
-                <a href="http://jsperf.com/string-vs-array-concat/2">jsPerf</a>.</p>
-              <pre><code>var items,
+          <p>When programatically building up a string, use Array#join instead of string concatenation. Mostly for IE:
+            <a href="http://jsperf.com/string-vs-array-concat/2">jsPerf</a>.</p>
+          <pre><code>var items,
     messages,
     length,
     i;
@@ -243,10 +240,10 @@ function inbox(messages) {
   }
   return &#39;&#39; + items.join(&#39;&#39;) + &#39;&#39;;
 }</code></pre>
-              <h2 id="-a-name-functions-a-functions">
-                <a name='Functions'></a>Functions</h2>
-              <p>Function expressions:</p>
-              <pre><code>// anonymous function expression
+          <h2 id="-a-name-functions-a-functions">
+            <a name='Functions'></a>Functions</h2>
+          <p>Function expressions:</p>
+          <pre><code>// anonymous function expression
 var anonymous = function() {
   return true;
 };
@@ -258,10 +255,10 @@ var named = function named() {
 (function() {
   console.log(&#39;Welcome to the Internet. Please follow me.&#39;);
 })();</code></pre>
-              <p>Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears.<strong>Note:</strong> ECMA-262
-                defines a <code>block</code> as a list of statements. A function declaration is not a statement.
-                <a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97">Read ECMA-262&#39;s note on this issue</a>.</p>
-              <pre><code>// bad
+          <p>Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears.<strong>Note:</strong> ECMA-262 defines
+            a <code>block</code> as a list of statements. A function declaration is not a statement.
+            <a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97">Read ECMA-262&#39;s note on this issue</a>.</p>
+          <pre><code>// bad
 if (currentUser) {
   function test() {
     console.log(&#39;Nope.&#39;);
@@ -274,8 +271,8 @@ if (currentUser) {
     console.log(&#39;Yup.&#39;);
   };
 }</code></pre>
-              <p>Never name a parameter <code>arguments</code>, this will take precedence over the <code>arguments</code> object that is given to every function scope.</p>
-              <pre><code>// bad
+          <p>Never name a parameter <code>arguments</code>, this will take precedence over the <code>arguments</code> object that is given to every function scope.</p>
+          <pre><code>// bad
 function nope(name, options, arguments) {
   // ...stuff...
 }
@@ -283,10 +280,10 @@ function nope(name, options, arguments) {
 function yup(name, options, args) {
   // ...stuff...
 }</code></pre>
-              <h2 id="-a-name-properties-a-properties">
-                <a name='Properties'></a>Properties</h2>
-              <p>Use dot notation when accessing properties.</p>
-              <pre><code>var luke = {
+          <h2 id="-a-name-properties-a-properties">
+            <a name='Properties'></a>Properties</h2>
+          <p>Use dot notation when accessing properties.</p>
+          <pre><code>var luke = {
   jedi: true,
   age: 28
 };
@@ -294,8 +291,8 @@ function yup(name, options, args) {
 var isJedi = luke[&#39;jedi&#39;];
 // good
 var isJedi = luke.jedi;</code></pre>
-              <p>Use subscript notation <code>[]</code> when accessing properties with a variable.</p>
-              <pre><code>var luke = {
+          <p>Use subscript notation <code>[]</code> when accessing properties with a variable.</p>
+          <pre><code>var luke = {
   jedi: true,
   age: 28
 };
@@ -303,15 +300,15 @@ function getProp(prop) {
   return luke[prop];
 }
 var isJedi = getProp(&#39;jedi&#39;);</code></pre>
-              <h2 id="-a-name-variables-a-variables">
-                <a name='Variables'></a>Variables</h2>
-              <p>Always use <code>var</code> to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that.</p>
-              <pre><code>// bad
+          <h2 id="-a-name-variables-a-variables">
+            <a name='Variables'></a>Variables</h2>
+          <p>Always use <code>var</code> to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that.</p>
+          <pre><code>// bad
 superPower = new SuperPower();
 // good
 var superPower = new SuperPower();</code></pre>
-              <p>Use one <code>var</code> declaration for multiple variables and declare each variable on a newline.</p>
-              <pre><code>// bad
+          <p>Use one <code>var</code> declaration for multiple variables and declare each variable on a newline.</p>
+          <pre><code>// bad
 var items = getItems();
 var goSportsTeam = true;
 var dragonball = &#39;z&#39;;
@@ -319,8 +316,8 @@ var dragonball = &#39;z&#39;;
 var items = getItems(),
     goSportsTeam = true,
     dragonball = &#39;z&#39;;</code></pre>
-              <p>Declare unassigned variables last. This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.</p>
-              <pre><code>// bad
+          <p>Declare unassigned variables last. This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.</p>
+          <pre><code>// bad
 var i, len, dragonball,
     items = getItems(),
     goSportsTeam = true;
@@ -335,8 +332,8 @@ var items = getItems(),
     dragonball,
     length,
     i;</code></pre>
-              <p>Assign variables at the top of their scope. This helps avoid issues with variable declaration and assignment hoisting related issues.</p>
-              <pre><code>// bad
+          <p>Assign variables at the top of their scope. This helps avoid issues with variable declaration and assignment hoisting related issues.</p>
+          <pre><code>// bad
 function() {
   test();
   console.log(&#39;doing stuff..&#39;);
@@ -374,10 +371,10 @@ function() {
   var name = getName();
   return true;
 }</code></pre>
-              <h2 id="-a-name-hoisting-a-hoisting">
-                <a name='Hoisting'></a>Hoisting</h2>
-              <p>Variable declarations get hoisted to the top of their scope, their assignment does not.</p>
-              <pre><code>// we know this wouldn&#39;t work (assuming there
+          <h2 id="-a-name-hoisting-a-hoisting">
+            <a name='Hoisting'></a>Hoisting</h2>
+          <p>Variable declarations get hoisted to the top of their scope, their assignment does not.</p>
+          <pre><code>// we know this wouldn&#39;t work (assuming there
 // is no notDefined global variable)
 function example() {
   console.log(notDefined); // =&gt; throws a ReferenceError
@@ -398,16 +395,16 @@ function example() {
   console.log(declaredButNotAssigned); // =&gt; undefined
   declaredButNotAssigned = true;
 }</code></pre>
-              <p>Anonymous function expressions hoist their variable name, but not the function assignment.</p>
-              <pre><code>function example() {
+          <p>Anonymous function expressions hoist their variable name, but not the function assignment.</p>
+          <pre><code>function example() {
   console.log(anonymous); // =&gt; undefined
   anonymous(); // =&gt; TypeError anonymous is not a function
   var anonymous = function() {
     console.log(&#39;anonymous function expression&#39;);
   };
 }</code></pre>
-              <p>Named function expressions hoist the variable name, not the function name or the function body.</p>
-              <pre><code>function example() {
+          <p>Named function expressions hoist the variable name, not the function name or the function body.</p>
+          <pre><code>function example() {
   console.log(named); // =&gt; undefined
   named(); // =&gt; TypeError named is not a function
   superPower(); // =&gt; ReferenceError superPower is not defined
@@ -424,40 +421,40 @@ function example() {
     console.log(&#39;named&#39;);
   }
 }</code></pre>
-              <p>Function declarations hoist their name and the function body.</p>
-              <pre><code>function example() {
+          <p>Function declarations hoist their name and the function body.</p>
+          <pre><code>function example() {
   superPower(); // =&gt; Flying
   function superPower() {
     console.log(&#39;Flying&#39;);
   }
 }</code></pre>
-              <p>For more information refer to
-                <a href="http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting">JavaScript Scoping &amp; Hoisting</a>by
-                <a href="http://www.adequatelygood.com/">Ben Cherry</a>
-              </p>
-              <h2 id="-a-name-conditional-a-conditional-expressions-equality">
-                <a name='Conditional'></a>Conditional Expressions &amp; Equality</h2>
-              <p>Use <code>===</code> and <code>!==</code> over <code>==</code> and <code>!=</code>.Conditional expressions are evaluated using coercion with the <code>ToBoolean</code> method and always follow these simple rules:</p>
-              <ul>
-                <li><strong>Objects</strong> evaluate to <strong>true</strong>
-                </li>
-                <li><strong>Undefined</strong> evaluates to <strong>false</strong>
-                </li>
-                <li><strong>Null</strong> evaluates to <strong>false</strong>
-                </li>
-                <li><strong>Booleans</strong> evaluate to <strong>the value of the boolean</strong>
-                </li>
-                <li><strong>Numbers</strong> evaluate to <strong>false</strong> if <strong>+0, -0, or NaN</strong>, otherwise <strong>true</strong>
-                </li>
-                <li><strong>Strings</strong> evaluate to <strong>false</strong> if an empty string <code>&#39;&#39;</code>, otherwise <strong>true</strong>
-                </li>
-              </ul>
-              <pre><code>if ([0]) {
+          <p>For more information refer to
+            <a href="http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting">JavaScript Scoping &amp; Hoisting</a>by
+            <a href="http://www.adequatelygood.com/">Ben Cherry</a>
+          </p>
+          <h2 id="-a-name-conditional-a-conditional-expressions-equality">
+            <a name='Conditional'></a>Conditional Expressions &amp; Equality</h2>
+          <p>Use <code>===</code> and <code>!==</code> over <code>==</code> and <code>!=</code>.Conditional expressions are evaluated using coercion with the <code>ToBoolean</code> method and always follow these simple rules:</p>
+          <ul>
+            <li><strong>Objects</strong> evaluate to <strong>true</strong>
+            </li>
+            <li><strong>Undefined</strong> evaluates to <strong>false</strong>
+            </li>
+            <li><strong>Null</strong> evaluates to <strong>false</strong>
+            </li>
+            <li><strong>Booleans</strong> evaluate to <strong>the value of the boolean</strong>
+            </li>
+            <li><strong>Numbers</strong> evaluate to <strong>false</strong> if <strong>+0, -0, or NaN</strong>, otherwise <strong>true</strong>
+            </li>
+            <li><strong>Strings</strong> evaluate to <strong>false</strong> if an empty string <code>&#39;&#39;</code>, otherwise <strong>true</strong>
+            </li>
+          </ul>
+          <pre><code>if ([0]) {
   // true
   // An array is an object, objects evaluate to true
 }</code></pre>
-              <p>Use shortcuts.</p>
-              <pre><code>// bad
+          <p>Use shortcuts.</p>
+          <pre><code>// bad
 if (name !== &#39;&#39;) {
   // ...stuff...
 }
@@ -473,12 +470,12 @@ if (collection.length &gt; 0) {
 if (collection.length) {
   // ...stuff...
 }</code></pre>
-              <p>For more information see
-                <a href="http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108">Truth Equality and JavaScript</a>by Angus Croll</p>
-              <h2 id="-a-name-blocks-a-blocks">
-                <a name='Blocks'></a>Blocks</h2>
-              <p>Use braces with all multi-line blocks.</p>
-              <pre><code>// bad
+          <p>For more information see
+            <a href="http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108">Truth Equality and JavaScript</a>by Angus Croll</p>
+          <h2 id="-a-name-blocks-a-blocks">
+            <a name='Blocks'></a>Blocks</h2>
+          <p>Use braces with all multi-line blocks.</p>
+          <pre><code>// bad
 if (test)
   return false;
 // good
@@ -493,10 +490,10 @@ function() { return false; }
 function() {
   return false;
 }</code></pre>
-              <h2 id="-a-name-comments-a-comments">
-                <a name='Comments'></a>Comments</h2>
-              <p>Use <code>/** ... */</code> for multiline comments. Include a description, specify types and values for all parameters and return values.</p>
-              <pre><code>// bad
+          <h2 id="-a-name-comments-a-comments">
+            <a name='Comments'></a>Comments</h2>
+          <p>Use <code>/** ... */</code> for multiline comments. Include a description, specify types and values for all parameters and return values.</p>
+          <pre><code>// bad
 // make() returns a new element
 // based on the passed in tag name
 //
@@ -518,8 +515,8 @@ function make(tag) {
   // ...stuff...
   return element;
 }</code></pre>
-              <p>Use <code>//</code> for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment.</p>
-              <pre><code>// bad
+          <p>Use <code>//</code> for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment.</p>
+          <pre><code>// bad
 var active = true;  // is current tab
 // good
 // is current tab
@@ -538,24 +535,24 @@ function getType() {
   var type = this._type || &#39;no type&#39;;
   return type;
 }</code></pre>
-              <p>Prefixing your comments with <code>FIXME</code> or <code>TODO</code> helps other developers quickly understand if you&#39;re pointing out a problem that needs to be revisited, or if you&#39;re suggesting a solution to the problem that needs
-                to be implemented. These are different than regular comments because they are actionable. The actions are <code>FIXME -- need to figure this out</code> or <code>TODO -- need to implement</code>.</p>
-              <p>Use <code>// FIXME:</code> to annotate problems</p>
-              <pre><code>function Calculator() {
+          <p>Prefixing your comments with <code>FIXME</code> or <code>TODO</code> helps other developers quickly understand if you&#39;re pointing out a problem that needs to be revisited, or if you&#39;re suggesting a solution to the problem that needs to be
+            implemented. These are different than regular comments because they are actionable. The actions are <code>FIXME -- need to figure this out</code> or <code>TODO -- need to implement</code>.</p>
+          <p>Use <code>// FIXME:</code> to annotate problems</p>
+          <pre><code>function Calculator() {
   // FIXME: shouldn&#39;t use a global here
   total = 0;
   return this;
 }</code></pre>
-              <p>Use <code>// TODO:</code> to annotate solutions to problems</p>
-              <pre><code>function Calculator() {
+          <p>Use <code>// TODO:</code> to annotate solutions to problems</p>
+          <pre><code>function Calculator() {
   // TODO: total should be configurable by an options param
   this.total = 0;
   return this;
 }</code></pre>
-              <h2 id="-a-name-whitespace-a-whitespace">
-                <a name='Whitespace'></a>Whitespace</h2>
-              <p>Use soft tabs set to 2 spaces</p>
-              <pre><code>// bad
+          <h2 id="-a-name-whitespace-a-whitespace">
+            <a name='Whitespace'></a>Whitespace</h2>
+          <p>Use soft tabs set to 2 spaces</p>
+          <pre><code>// bad
 function() {
 ∙∙∙∙var name;
 }
@@ -567,8 +564,8 @@ function() {
 function() {
 ∙∙var name;
 }</code></pre>
-              <p>Place 1 space before the leading brace.</p>
-              <pre><code>// bad
+          <p>Place 1 space before the leading brace.</p>
+          <pre><code>// bad
 function test(){
   console.log(&#39;test&#39;);
 }
@@ -586,13 +583,13 @@ dog.set(&#39;attr&#39;, {
   age: &#39;1 year&#39;,
   breed: &#39;Bernese Mountain Dog&#39;
 });</code></pre>
-              <p>Set off operators with spaces.</p>
-              <pre><code>// bad
+          <p>Set off operators with spaces.</p>
+          <pre><code>// bad
 var x=y+5;
 // good
 var x = y + 5;</code></pre>
-              <p>Place an empty newline at the end of the file.</p>
-              <pre><code>// bad
+          <p>Place an empty newline at the end of the file.</p>
+          <pre><code>// bad
 (function(global) {
   // ...stuff...
 })(this);
@@ -600,8 +597,8 @@ var x = y + 5;</code></pre>
 (function(global) {
   // ...stuff...
 })(this);</code></pre>
-              <p>Use indentation when making long method chains.</p>
-              <pre><code>// bad
+          <p>Use indentation when making long method chains.</p>
+          <pre><code>// bad
 $(&#39;#items&#39;).find(&#39;.selected&#39;).highlight().end().find(&#39;.open&#39;).updateCount();
 // good
 $(&#39;#items&#39;)
@@ -624,11 +621,11 @@ var leds = stage.selectAll(&#39;.led&#39;)
   .append(&#39;svg:g&#39;)
     .attr(&#39;transform&#39;, &#39;translate(&#39; + (radius + margin) + &#39;,&#39; + (radius + margin) + &#39;)&#39;)
     .call(tron.led);</code></pre>
-              <h2 id="-a-name-commas-a-commas">
-                <a name='Commas'></a>Commas</h2>
-              <p>Leading commas: <strong>Nope.</strong>
-              </p>
-              <pre><code>// bad
+          <h2 id="-a-name-commas-a-commas">
+            <a name='Commas'></a>Commas</h2>
+          <p>Leading commas: <strong>Nope.</strong>
+          </p>
+          <pre><code>// bad
 var once
   , upon
   , aTime;
@@ -650,13 +647,13 @@ var hero = {
   heroName: &#39;Mr. Incredible&#39;,
   superPower: &#39;strength&#39;
 };</code></pre>
-              <p>Additional trailing comma: <strong>Nope.</strong> This can cause problems with IE6/7 and IE9 if it&#39;s in quirksmode. Also, in some implementations of ES3 would add length to an array if it had an additional trailing comma. This was clarified
-                in ES5 (
-                <a href="http://es5.github.io/#D">source</a>):</p>
-              <blockquote>
-                <p>Edition 5 clarifies the fact that a trailing comma at the end of an ArrayInitialiser does not add to the length of the array. This is not a semantic change from Edition 3 but some implementations may have previously misinterpreted this.</p>
-              </blockquote>
-              <pre><code>// bad
+          <p>Additional trailing comma: <strong>Nope.</strong> This can cause problems with IE6/7 and IE9 if it&#39;s in quirksmode. Also, in some implementations of ES3 would add length to an array if it had an additional trailing comma. This was clarified
+            in ES5 (
+            <a href="http://es5.github.io/#D">source</a>):</p>
+          <blockquote>
+            <p>Edition 5 clarifies the fact that a trailing comma at the end of an ArrayInitialiser does not add to the length of the array. This is not a semantic change from Edition 3 but some implementations may have previously misinterpreted this.</p>
+          </blockquote>
+          <pre><code>// bad
 var hero = {
   firstName: &#39;Kevin&#39;,
   lastName: &#39;Flynn&#39;,
@@ -674,11 +671,11 @@ var heroes = [
   &#39;Batman&#39;,
   &#39;Superman&#39;
 ];</code></pre>
-              <h2 id="-a-name-semicolons-a-semicolons">
-                <a name='Semicolons'></a>Semicolons</h2>
-              <p><strong>Yup.</strong>
-              </p>
-              <pre><code>// bad
+          <h2 id="-a-name-semicolons-a-semicolons">
+            <a name='Semicolons'></a>Semicolons</h2>
+          <p><strong>Yup.</strong>
+          </p>
+          <pre><code>// bad
 (function() {
   var name = &#39;Skywalker&#39;
   return name
@@ -693,10 +690,10 @@ var heroes = [
   var name = &#39;Skywalker&#39;;
   return name;
 })();</code></pre>
-              <h2 id="-a-name-type-a-type-casting-coercion">
-                <a name='Type'></a>Type Casting &amp; Coercion</h2>
-              <p>Perform type coercion at the beginning of the statement.Strings:</p>
-              <pre><code>//  =&gt; this.reviewScore = 9;
+          <h2 id="-a-name-type-a-type-casting-coercion">
+            <a name='Type'></a>Type Casting &amp; Coercion</h2>
+          <p>Perform type coercion at the beginning of the statement.Strings:</p>
+          <pre><code>//  =&gt; this.reviewScore = 9;
 // bad
 var totalScore = this.reviewScore + &#39;&#39;;
 // good
@@ -705,8 +702,8 @@ var totalScore = &#39;&#39; + this.reviewScore;
 var totalScore = &#39;&#39; + this.reviewScore + &#39; total score&#39;;
 // good
 var totalScore = this.reviewScore + &#39; total score&#39;;</code></pre>
-              <p>Use <code>parseInt</code> for Numbers and always with a radix for type casting.</p>
-              <pre><code>var inputValue = &#39;4&#39;;
+          <p>Use <code>parseInt</code> for Numbers and always with a radix for type casting.</p>
+          <pre><code>var inputValue = &#39;4&#39;;
 // bad
 var val = new Number(inputValue);
 // bad
@@ -719,31 +716,31 @@ var val = parseInt(inputValue);
 var val = Number(inputValue);
 // good
 var val = parseInt(inputValue, 10);</code></pre>
-              <p>If for whatever reason you are doing something wild and <code>parseInt</code> is your bottleneck and need to use Bitshift for
-                <a href="http://jsperf.com/coercion-vs-casting/3">performance reasons</a>, leave a comment explaining why and what you&#39;re doing.<strong>Note:</strong> Be careful when using bitshift operations. Numbers are represented as
-                <a href="http://es5.github.io/#x4.3.19">64-bit values</a>, but Bitshift operations always return a 32-bit integer (
-                <a href="http://es5.github.io/#x11.7">source</a>). Bitshift can lead to unexpected behavior for integer values larger than 32 bits.
-                <a href="https://github.com/airbnb/javascript/issues/109">Discussion</a>
-              </p>
-              <pre><code>// good
+          <p>If for whatever reason you are doing something wild and <code>parseInt</code> is your bottleneck and need to use Bitshift for
+            <a href="http://jsperf.com/coercion-vs-casting/3">performance reasons</a>, leave a comment explaining why and what you&#39;re doing.<strong>Note:</strong> Be careful when using bitshift operations. Numbers are represented as
+            <a href="http://es5.github.io/#x4.3.19">64-bit values</a>, but Bitshift operations always return a 32-bit integer (
+            <a href="http://es5.github.io/#x11.7">source</a>). Bitshift can lead to unexpected behavior for integer values larger than 32 bits.
+            <a href="https://github.com/airbnb/javascript/issues/109">Discussion</a>
+          </p>
+          <pre><code>// good
 /**
  * parseInt was the reason my code was slow.
  * Bitshifting the String to coerce it to a
  * Number made it a lot faster.
  */
 var val = inputValue &gt;&gt; 0;</code></pre>
-              <p>Booleans:</p>
-              <pre><code>var age = 0;
+          <p>Booleans:</p>
+          <pre><code>var age = 0;
 // bad
 var hasAge = new Boolean(age);
 // good
 var hasAge = Boolean(age);
 // good
 var hasAge = !!age;</code></pre>
-              <h2 id="-a-name-naming-a-naming-conventions">
-                <a name='Naming'></a>Naming Conventions</h2>
-              <p>Avoid single letter names. Be descriptive with your naming.</p>
-              <pre><code>// bad
+          <h2 id="-a-name-naming-a-naming-conventions">
+            <a name='Naming'></a>Naming Conventions</h2>
+          <p>Avoid single letter names. Be descriptive with your naming.</p>
+          <pre><code>// bad
 function q() {
   // ...stuff...
 }
@@ -751,8 +748,8 @@ function q() {
 function query() {
   // ..stuff..
 }</code></pre>
-              <p>Use camelCase when naming objects, functions, and instances</p>
-              <pre><code>// bad
+          <p>Use camelCase when naming objects, functions, and instances</p>
+          <pre><code>// bad
 var OBJEcttsssss = {};
 var this_is_my_object = {};
 function c() {};
@@ -765,8 +762,8 @@ function thisIsMyFunction() {};
 var user = new User({
   name: &#39;Bob Parr&#39;
 });</code></pre>
-              <p>Use PascalCase when naming constructors or classes</p>
-              <pre><code>// bad
+          <p>Use PascalCase when naming constructors or classes</p>
+          <pre><code>// bad
 function user(options) {
   this.name = options.name;
 }
@@ -780,14 +777,14 @@ function User(options) {
 var good = new User({
   name: &#39;yup&#39;
 });</code></pre>
-              <p>Use a leading underscore <code>_</code> when naming private properties</p>
-              <pre><code>// bad
+          <p>Use a leading underscore <code>_</code> when naming private properties</p>
+          <pre><code>// bad
 this.__firstName__ = &#39;Panda&#39;;
 this.firstName_ = &#39;Panda&#39;;
 // good
 this._firstName = &#39;Panda&#39;;</code></pre>
-              <p>When saving a reference to <code>this</code> use <code>_this</code>.</p>
-              <pre><code>// bad
+          <p>When saving a reference to <code>this</code> use <code>_this</code>.</p>
+          <pre><code>// bad
 function() {
   var self = this;
   return function() {
@@ -808,8 +805,8 @@ function() {
     console.log(_this);
   };
 }</code></pre>
-              <p>Name your functions. This is helpful for stack traces.</p>
-              <pre><code>// bad
+          <p>Name your functions. This is helpful for stack traces.</p>
+          <pre><code>// bad
 var log = function(msg) {
   console.log(msg);
 };
@@ -817,10 +814,10 @@ var log = function(msg) {
 var log = function log(msg) {
   console.log(msg);
 };</code></pre>
-              <h2 id="-a-name-accessors-a-accessors">
-                <a name='Accessors'></a>Accessors</h2>
-              <p>Accessor functions for properties are not requiredIf you do make accessor functions use getVal() and setVal(&#39;hello&#39;)</p>
-              <pre><code>// bad
+          <h2 id="-a-name-accessors-a-accessors">
+            <a name='Accessors'></a>Accessors</h2>
+          <p>Accessor functions for properties are not requiredIf you do make accessor functions use getVal() and setVal(&#39;hello&#39;)</p>
+          <pre><code>// bad
 dragon.age();
 // good
 dragon.getAge();
@@ -828,8 +825,8 @@ dragon.getAge();
 dragon.age(25);
 // good
 dragon.setAge(25);</code></pre>
-              <p>If the property is a boolean, use isVal() or hasVal()</p>
-              <pre><code>// bad
+          <p>If the property is a boolean, use isVal() or hasVal()</p>
+          <pre><code>// bad
 if (!dragon.age()) {
   return false;
 }
@@ -837,8 +834,8 @@ if (!dragon.age()) {
 if (!dragon.hasAge()) {
   return false;
 }</code></pre>
-              <p>It&#39;s okay to create get() and set() functions, but be consistent.</p>
-              <pre><code>function Jedi(options) {
+          <p>It&#39;s okay to create get() and set() functions, but be consistent.</p>
+          <pre><code>function Jedi(options) {
   options || (options = {});
   var lightsaber = options.lightsaber || &#39;blue&#39;;
   this.set(&#39;lightsaber&#39;, lightsaber);
@@ -849,10 +846,10 @@ Jedi.prototype.set = function(key, val) {
 Jedi.prototype.get = function(key) {
   return this[key];
 };</code></pre>
-              <h2 id="-a-name-constructors-a-constructors">
-                <a name='Constructors'></a>Constructors</h2>
-              <p>Assign methods to the prototype object, instead of overwriting the prototype with a new object. Overwriting the prototype makes inheritance impossible: by resetting the prototype you&#39;ll overwrite the base!</p>
-              <pre><code>function Jedi() {
+          <h2 id="-a-name-constructors-a-constructors">
+            <a name='Constructors'></a>Constructors</h2>
+          <p>Assign methods to the prototype object, instead of overwriting the prototype with a new object. Overwriting the prototype makes inheritance impossible: by resetting the prototype you&#39;ll overwrite the base!</p>
+          <pre><code>function Jedi() {
   console.log(&#39;new jedi&#39;);
 }
 // bad
@@ -871,8 +868,8 @@ Jedi.prototype.fight = function fight() {
 Jedi.prototype.block = function block() {
   console.log(&#39;blocking&#39;);
 };</code></pre>
-              <p>Methods can return <code>this</code> to help with method chaining.</p>
-              <pre><code>// bad
+          <p>Methods can return <code>this</code> to help with method chaining.</p>
+          <pre><code>// bad
 Jedi.prototype.jump = function() {
   this.jumping = true;
   return true;
@@ -895,8 +892,8 @@ Jedi.prototype.setHeight = function(height) {
 var luke = new Jedi();
 luke.jump()
   .setHeight(20);</code></pre>
-              <p>It&#39;s okay to write a custom toString() method, just make sure it works successfully and causes no side effects.</p>
-              <pre><code>function Jedi(options) {
+          <p>It&#39;s okay to write a custom toString() method, just make sure it works successfully and causes no side effects.</p>
+          <pre><code>function Jedi(options) {
   options || (options = {});
   this.name = options.name || &#39;no name&#39;;
 }
@@ -906,11 +903,11 @@ Jedi.prototype.getName = function getName() {
 Jedi.prototype.toString = function toString() {
   return &#39;Jedi - &#39; + this.getName();
 };</code></pre>
-              <h2 id="-a-name-events-a-events">
-                <a name='Events'></a>Events</h2>
-              <p>When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding
-                and updating every handler for the event. For example, instead of:</p>
-              <pre><code>// bad
+          <h2 id="-a-name-events-a-events">
+            <a name='Events'></a>Events</h2>
+          <p>When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and
+            updating every handler for the event. For example, instead of:</p>
+          <pre><code>// bad
 $(this).trigger(&#39;listingUpdated&#39;, listing.id);
 ...
 $(this).on(&#39;listingUpdated&#39;, function(e, listingId) {
@@ -923,12 +920,12 @@ $(this).trigger(&#39;listingUpdated&#39;, { listingId : listing.id });
 $(this).on(&#39;listingUpdated&#39;, function(e, data) {
   // do something with data.listingId
 });</code></pre>
-              <h2 id="-a-name-modules-a-modules">
-                <a name='Modules'></a>Modules</h2>
-              <p>The module should start with a <code>!</code>. This ensures that if a malformed module forgets to include a final semicolon there aren&#39;t errors in production when the scripts get concatenated.
-                <a href="https://github.com/airbnb/javascript/issues/44#issuecomment-13063933">Explanation</a>The file should be named with camelCase, live in a folder with the same name, and match the name of the single export.Add a method called noConflict() that sets the exported module to the previous version and returns this
-                one.Always declare <code>&#39;use strict&#39;;</code> at the top of the module.</p>
-              <pre><code>// fancyInput/fancyInput.js
+          <h2 id="-a-name-modules-a-modules">
+            <a name='Modules'></a>Modules</h2>
+          <p>The module should start with a <code>!</code>. This ensures that if a malformed module forgets to include a final semicolon there aren&#39;t errors in production when the scripts get concatenated.
+            <a href="https://github.com/airbnb/javascript/issues/44#issuecomment-13063933">Explanation</a>The file should be named with camelCase, live in a folder with the same name, and match the name of the single export.Add a method called noConflict() that sets the exported module to the previous version and returns this one.Always
+            declare <code>&#39;use strict&#39;;</code> at the top of the module.</p>
+          <pre><code>// fancyInput/fancyInput.js
 !function(global) {
   &#39;use strict&#39;;
   var previousFancyInput = global.FancyInput;
@@ -941,15 +938,15 @@ $(this).on(&#39;listingUpdated&#39;, function(e, data) {
   };
   global.FancyInput = FancyInput;
 }(this);</code></pre>
-              <h2 id="-a-name-jquery-a-jquery">
-                <a name='jQuery'></a>jQuery</h2>
-              <p>Prefix jQuery object variables with a $.</p>
-              <pre><code>// bad
+          <h2 id="-a-name-jquery-a-jquery">
+            <a name='jQuery'></a>jQuery</h2>
+          <p>Prefix jQuery object variables with a $.</p>
+          <pre><code>// bad
 var sidebar = $(&#39;.sidebar&#39;);
 // good
 var $sidebar = $(&#39;.sidebar&#39;);</code></pre>
-              <p>Cache jQuery lookups.</p>
-              <pre><code>// bad
+          <p>Cache jQuery lookups.</p>
+          <pre><code>// bad
 function setSidebar() {
   $(&#39;.sidebar&#39;).hide();
   // ...stuff...
@@ -966,11 +963,11 @@ function setSidebar() {
     &#39;background-color&#39;: &#39;pink&#39;
   });
 }</code></pre>
-              <p>For DOM queries use Cascading <code>$(&#39;.sidebar ul&#39;)</code> or parent &gt; child <code>$(&#39;.sidebar &gt; ul&#39;)</code>.
-                <a href="http://jsperf.com/jquery-find-vs-context-sel/16">jsPerf</a>
-              </p>
-              <p>Use <code>find</code> with scoped jQuery object queries.</p>
-              <pre><code>// bad
+          <p>For DOM queries use Cascading <code>$(&#39;.sidebar ul&#39;)</code> or parent &gt; child <code>$(&#39;.sidebar &gt; ul&#39;)</code>.
+            <a href="http://jsperf.com/jquery-find-vs-context-sel/16">jsPerf</a>
+          </p>
+          <p>Use <code>find</code> with scoped jQuery object queries.</p>
+          <pre><code>// bad
 $(&#39;ul&#39;, &#39;.sidebar&#39;).hide();
 // bad
 $(&#39;.sidebar&#39;).find(&#39;ul&#39;).hide();
@@ -980,17 +977,15 @@ $(&#39;.sidebar ul&#39;).hide();
 $(&#39;.sidebar &gt; ul&#39;).hide();
 // good
 $sidebar.find(&#39;ul&#39;).hide();</code></pre>
-            </div>
-          </div>
-        </section>
-        <script src="bower_components/jquery/jquery.min.js"></script>
-        <script src="bower_components/foundation/js/foundation.min.js"></script>
-        <script src="bower_components/foundation/js/foundation/foundation.magellan.js"></script>
-        <script>
-          hljs.initHighlightingOnLoad();
-        </script>
-        <script src="js/app.js"></script>
+        </div>
       </div>
-    </div>
+    </section>
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/foundation/js/foundation.min.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.magellan.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="js/app.js"></script>
   </body>
 </html>

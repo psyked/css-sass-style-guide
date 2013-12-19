@@ -1,7 +1,6 @@
 ---
-title: ActiveText Demo website
+title: Naming Conventions
 ---
-#Naming Conventions:
 You are not a human code compiler/compressor, so don't try to be one. Be clear and verbose with your variable names and prefer longer, descriptive names:
 
     function veryLongOperationName

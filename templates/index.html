@@ -9,31 +9,27 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="highlight/highlight.pack.js"></script>
 </head>
-<body class="antialiased hide-extras">
-<div class="marketing off-canvas-wrap">
-    <div class="inner-wrap">
-        {{> topnav }}
-        <section role="main">
-            <div class="row">
-                {{#title}}
-                <div class="large-12 columns">
-                    <h1>{{ title }}</h1>
-                    <hr/>
-                </div>
-                {{/title}}
-                <div class="large-12 columns">
-                    {{#markdown}}
-                    {{> body }}
-                    {{/markdown}}
-                </div>
-            </div>
-        </section>
-        <script src="bower_components/jquery/jquery.min.js"></script>
-        <script src="bower_components/foundation/js/foundation.min.js"></script>
-        <script src="bower_components/foundation/js/foundation/foundation.magellan.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
-        <script src="js/app.js"></script>
+<body>
+<section role="main">
+    {{> topnav }}
+    <div class="row">
+        {{#if title}}
+        <div class="large-12 columns">
+            <h1>{{ title }}</h1>
+            <hr/>
+        </div>
+        {{/if}}
+        <div class="large-8 columns">
+            {{#markdown}}
+            {{> body }}
+            {{/markdown}}
+        </div>
     </div>
-</div>
+</section>
+<script src="bower_components/jquery/jquery.min.js"></script>
+<script src="bower_components/foundation/js/foundation.min.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.magellan.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="js/app.js"></script>
 </body>
 </html>

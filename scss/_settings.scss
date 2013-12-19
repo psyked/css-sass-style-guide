@@ -5,6 +5,8 @@
 // Uncomment to use rem-calc() in your settings
 // @import "foundation/functions";
 
+$mmt-red: #ee2e24;
+
 // $experimental: true;
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
@@ -930,11 +932,11 @@
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #f10000; //#333;
+$topbar-bg-color: $mmt-red; //#333;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: 45px;
+$topbar-height: 45px;
 // $topbar-margin-bottom: 0;
 
 // Control Input height for top bar
@@ -944,9 +946,9 @@
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: #333;
+$topbar-dropdown-bg: $mmt-red;
 // $topbar-dropdown-link-color: #fff;
-// $topbar-dropdown-link-bg: #333;
+$topbar-dropdown-link-bg: darken($mmt-red, 5%);
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: #fff;
 // $topbar-dropdown-toggle-alpha: 0.4;
@@ -958,7 +960,7 @@
 // $topbar-link-weight: normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-// $topbar-link-bg-hover: #272727  ;
+$topbar-link-bg-hover: darken($mmt-red, 10%); //#272727  ;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: darken($primary-color, 5%);
 // $topbar-link-font-family: $body-font-family;
