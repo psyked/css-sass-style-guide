@@ -1,8 +1,9 @@
 ---
 title: JavaScript Development Best Practices
 ---
-
-
+<div class='row'>
+<div class='large-12 columns'>
+{{#markdown}}
 ## <a name='compiling' data-magellan-destination='compiling'></a>Compiling & minification
 Always minify or compile your customer-facing code, even if it’s just simple minification with pretty-printing.
 
@@ -1157,3 +1158,6 @@ Use `find` with scoped jQuery object queries.
 
     // good
     $sidebar.find('ul').hide();
+{{/markdown}}
+</div>
+</div>

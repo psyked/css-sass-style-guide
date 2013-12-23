@@ -1,6 +1,9 @@
 ---
 title: Formatting
 ---
+<div class='row'>
+<div class='large-12 columns'>
+{{#markdown}}
 #Source Code formatting rules:
 All code in any code-base should look like a single person typed it, no matter how many people contributed. If you’re joining a project for the first time and it doesn’t follow these guidelines, keep with the existing style of the code - above all else, consistency is key.
 
@@ -37,3 +40,6 @@ Use opening brace on the same line, and use braces always - no shorthand code or
 
 #Blank lines
 Use newlines to group logically related pieces of code.
+{{/markdown}}
+</div>
+</div>

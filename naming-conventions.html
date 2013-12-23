@@ -46,21 +46,29 @@
         </div>
     </div>
     
-    <p>You are not a human code compiler/compressor, so don&#39;t try to be one. Be clear and verbose with your variable names and prefer longer, descriptive names:</p>
+    <div class='row'>
+<div class='large-12 columns'>
+<p>You are not a human code compiler/compressor, so don&#39;t try to be one. Be clear and verbose with your variable names and prefer longer, descriptive names:</p>
 <pre><code>function veryLongOperationName
+
 function short()</code></pre>
 <p>Use vocabulary like is, has, set and get:</p>
 <pre><code>function isReady()
+
 function hasValue()
+
 function setName()
+
 function getName()</code></pre>
 <h1 id="variables">Variables</h1>
 <p>Start first word lowercase and after that all words start with uppercase letter (Camel case):</p>
 <pre><code>var foo = &quot;&quot;;
+
 var fooName = &quot;&quot;;</code></pre>
 <h1 id="constants">Constants</h1>
 <p>Use uppercase with underscore:</p>
 <pre><code>var CONSTANT = &#39;VALUE&#39;;
+
 var CONSTANT_NAME = &#39;VALUE&#39;;</code></pre>
 <h1 id="functions">Functions</h1>
 <p>Start first word lowercase and after that all words start with uppercase letter (Camel case):</p>
@@ -74,15 +82,25 @@ var CONSTANT_NAME = &#39;VALUE&#39;;</code></pre>
 <p>Use all-lower-hyphen-css-case for multi-word filenames and config keys.</p>
 <p>In summary:</p>
 <pre><code>functionNamesLikeThis
+
 variableNamesLikeThis
+
 ClassNamesLikeThis
+
 EnumNamesLikeThis
+
 methodNamesLikeThis
+
 CONSTANT_VALUES_LIKE_THIS
+
 foo.namespaceNamesLikeThis.bar
-filenameslikethis.js</code></pre>
+
+filenames-like-this.js</code></pre>
 <h1 id="use-a-jshintrc-file">Use a .jshintrc file</h1>
 <p>JSHint is a JavaScript syntax and style checker you can use to alert about code style issues. It integrates well into to many commonly used editors and is a nice way to enforce a common style. You can place it in the root folder of your project and JSHint-aware code editors will notice it and follow it though all code in your project.</p>
+
+</div>
+</div>
 
 </main>
 <footer class="zurb-footer">

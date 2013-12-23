@@ -1,6 +1,9 @@
 ---
 title: The “Too long; didn’t read” Style Guide
 ---
+<div class='row'>
+<div class='large-12 columns'>
+{{#markdown}}
 1. Create a **.jshintrc** file with the following content, and place it in the root folder of your project, and then configure your IDE to use those settings and auto-format your code when you save or commit it.
         {
           "camelcase" : true,
@@ -32,3 +35,6 @@ title: The “Too long; didn’t read” Style Guide
     - `function getName()`
 1. Use whitespace as outlined by the [Idiomatic JavaScript Style Guide](https://github.com/rwaldron/idiomatic.js/#spacing)
 1. Braces go on the same line, not a new line.
+{{/markdown}}
+</div>
+</div>
