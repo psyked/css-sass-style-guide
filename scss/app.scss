@@ -1,2 +1,22 @@
 @import "settings";
 @import "foundation";
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  main {
+    flex: 1;
+  }
+}
+
+.zurb-footer {
+  background: #333;
+  color: $secondary-color;
+  padding-top: 1em;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $secondary-color;
+  }
+}

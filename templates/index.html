@@ -10,8 +10,8 @@
     <script src="highlight/highlight.pack.js"></script>
 </head>
 <body>
-<section role="main">
-    {{> topnav }}
+<header>{{> topnav }}</header>
+<main role="main">
     <div class="row">
         {{#if title}}
         <div class="large-12 columns">
@@ -25,7 +25,12 @@
             {{/markdown}}
         </div>
     </div>
-</section>
+</main>
+<footer class="zurb-footer">
+    <div class="row">
+        {{> footer }}
+    </div>
+</footer>
 <script src="bower_components/jquery/jquery.min.js"></script>
 <script src="bower_components/foundation/js/foundation.min.js"></script>
 <script src="bower_components/foundation/js/foundation/foundation.magellan.js"></script>
