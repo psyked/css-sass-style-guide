@@ -4,9 +4,9 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         assemble: {
-            options: {
-                postprocess: require('pretty')
-            },
+//            options: {
+//                postprocess: require('pretty')
+//            },
             demo: {
                 options: {
                     partials: ['templates/includes/*.hbs'],

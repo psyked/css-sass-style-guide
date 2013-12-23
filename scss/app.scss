@@ -1,5 +1,6 @@
 @import "settings";
 @import "foundation";
+@import "monokai_sublime";
 
 body {
   display: flex;
@@ -8,6 +9,7 @@ body {
 
   main {
     flex: 1;
+    padding-top: 1em;
   }
 }
 
