@@ -6,7 +6,7 @@ title: JavaScript Development Best Practices
 ## <a name='compiling' data-magellan-destination='compiling'></a>Compiling & minification
 Always minify or compile your customer-facing code, even if it’s just simple minification with pretty-printing.
 
-<div data-magellan-expedition="fixed" data-magellan-top-offset="45">
+<div data-magellan-expedition="fixed" data-magellan-top-offset="45" style="left:auto">
   <dl class="sub-nav">
     <dd data-magellan-arrival="compiling"><a href="#compiling">Build with HTML</a></dd>
     <dd data-magellan-arrival="globals"><a href="#globals">Arrival 2</a></dd>
