@@ -1,91 +1,144 @@
 <!doctype html>
 <html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>JS Style Guide - MMT Digital</title>
-    <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="highlight/styles/default.css">
+    <link rel="stylesheet" href="css/app.css"/>
     <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="highlight/highlight.pack.js"></script>
-  </head>
-  <body>
-    <header>
-      <div class="contain-to-grid fixed">
-        <nav class="top-bar" data-topbar>
-          <ul class="title-area">
+</head>
+<body>
+<header>
+<div class="contain-to-grid fixed">
+    <nav class="top-bar" data-topbar>
+        <ul class="title-area">
             <li class="name">
-              <h1>
-                <a href="./">
-                  <img src="assets/mmt-logo.svg" width="32" height="32" style="margin-right:1em" />JavaScript Style Guide</a>
-              </h1>
+                <h1>
+                    <a href="./"><img src="assets/mmt-logo.svg" width="32" height="32" style="margin-right:1em"/> JavaScript Style Guide</a>
+                </h1>
             </li>
-            <li class="toggle-topbar menu-icon">
-              <a href="#"><span>Menu</span>
-              </a>
-            </li>
-          </ul>
-          <section class="top-bar-section">
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
 
+        <section class="top-bar-section">
             <!-- Right Nav Section -->
             <ul class="left">
-              <li class="has-dropdown">
-                <a href="./">Overview</a>
-                <ul class="dropdown">
-                  <li> <a href="summary.html">The short version</a> </li>
-                  <li> <a href="formatting.html">Source code formatting</a> </li>
-                  <li> <a href="naming-conventions.html">Naming Conventions</a> </li>
-                  <li> <a href="development-best-practices.html">JavaScript Best Practices</a> </li>
-                </ul>
-              </li>
+                <li class="has-dropdown">
+                    <a href="./">Overview</a>
+                    <ul class="dropdown">
+                        <li><a href="summary.html">The short version</a></li>
+                        <li><a href="formatting.html">Source code formatting</a></li>
+                        <li><a href="naming-conventions.html">Naming Conventions</a></li>
+                        <li><a href="development-best-practices.html">JavaScript Best Practices</a></li>
+                    </ul>
+                </li>
             </ul>
-          </section>
-        </nav>
-      </div>
-    </header>
-    <main role="main">
-      <div class="row">
+        </section>
+    </nav>
+</div></header>
+<main role="main">
+    <div class="row">
+        
         <div class="large-12 columns">
-          <h1>MMT Digital&#x27;s JavaScript Style Guide</h1>
-          <hr/>
+            <h1>MMT Digital&#x27;s JavaScript Style Guide</h1>
+            <hr/>
         </div>
-        <div class="large-12 columns">
-          <h3 id="background-reading-">Background reading:</h3>
-          <p>Our JavaScript Style Guidelines are drawn from a combination of many sources, but primarily from the following sources:</p>
-          <ul>
-            <li> <a href="https://github.com/Seravo/js-winning-style">JavaScript, the winning style</a> </li>
-            <li> <a href="https://github.com/rwaldron/idiomatic.js/">Principles of Writing Consistent, Idiomatic JavaScript</a> </li>
-            <li> <a href="https://github.com/airbnb/javascript">Airbnb JavaScript Style Guide</a> </li>
-            <li> <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Google JavaScript Style Guide</a> </li>
-          </ul>
-          <p>
-            <div class="large-4 left column">
-              <img src="http://octodex.github.com/images/forktocat.jpg" alt="Fork Me!">
-            </div>
-          </p>
-          <h3 id="want-to-contribute-">Want to contribute?</h3>
-          <p>Our guidelines are
-            <a href="https://github.com/psyked/js-style-guide">hosted on GitHub;</a>so please, feel free to fork it and send us a pull request.</p>
-        </div>
-      </div>
-    </main>
-    <footer class="zurb-footer">
-      <div class="row">
-        <div class="large-4 columns">
-          <h4>Want to contribute?</h4>
-          <p>This website is hosted on GitHub, so it's really easy to get involved.</p>
-          <p>
-            <a href="https://github.com/psyked/js-style-guide" class="button">View this project on GitHub.</a>
-          </p>
-        </div>
-      </div>
-    </footer>
-    <script src="bower_components/jquery/jquery.min.js"></script>
-    <script src="bower_components/foundation/js/foundation.min.js"></script>
-    <script src="bower_components/foundation/js/foundation/foundation.magellan.js"></script>
-    <script>
-      hljs.initHighlightingOnLoad();
-    </script>
-    <script src="js/app.js"></script>
-  </body>
+    </div>
+    
+    <div class='row'>
+<div class='large-4 columns'>
+<h2 id="-tl-dr-"><strong> tl;dr </strong></h2>
+<p>Background reading can get a little boring, so you can skip past that and onto the good stuff by reading our summary.</p>
+<p><a href='summary.html' class='button'>Open the Summary now.</a></p>
+
+</div>
+<div class='large-8 columns'>
+<pre><code>if (isNewProject) {
+    shouldUseThisStyleGuide = true;
+    shouldMinifyJavaScript = true;
+}
+
+if (shouldUseThisStyleGuide) {
+    applyIDEFormattingPreferences();
+    integrateJSHintFile();
+}
+
+if (shouldMinifyJavaScript) {
+    buildTool = BuildTools.GRUNT;
+    minificationLibrary = &#39;uglifyjs&#39;;
+    makeCompatibleWithOldIE = true;
+}</code></pre>
+
+</div>
+</div>
+
+<div class='row' style='margin-top:1em'>
+<div class='large-6 columns'>
+<h2 id="source-code-formatting">Source Code Formatting</h2>
+<p>Background reading can get a little boring, so you can skip past that and onto the good stuff by reading our summary.</p>
+<p><a href='summary.html' class='button'>Open the Summary now.</a></p>
+
+</div>
+
+<div class='large-6 columns'>
+<h2 id="naming-conventions">Naming Conventions</h2>
+<p>Background reading can get a little boring, so you can skip past that and onto the good stuff by reading our summary.</p>
+<p><a href='naming-conventions.html' class='button'>Open the Summary now.</a></p>
+
+</div>
+
+<p></div></p>
+<div class='row'>
+<div class='large-12 columns'>
+<h3 id="best-practice-guidelines">Best Practice Guidelines</h3>
+<p>Background reading can get a little boring, so you can skip past that and onto the good stuff by reading our summary.</p>
+<p><a href='summary.html' class='button'>Open the Summary now.</a></p>
+
+</div>
+</div>
+<div class='row'>
+<div class='large-6 columns'>
+<h4 id="background-reading-">Background reading:</h4>
+<p>Our JavaScript Style Guidelines are drawn from a combination of many sources, but primarily from the following sources:</p>
+<ul>
+<li><a href="https://github.com/Seravo/js-winning-style">JavaScript, the winning style</a></li>
+<li><a href="https://github.com/rwaldron/idiomatic.js/">Principles of Writing Consistent, Idiomatic JavaScript</a></li>
+<li><a href="https://github.com/airbnb/javascript">Airbnb JavaScript Style Guide</a></li>
+<li><a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Google JavaScript Style Guide</a></li>
+</ul>
+
+</div>
+
+<div class='large-6 columns'>
+<h4 id="want-to-contribute-">Want to contribute?</h4>
+<p><div class="large-4 left column">
+<img src="http://octodex.github.com/images/forktocat.jpg" alt="Fork Me!">
+</div>
+Our guidelines are <a href="https://github.com/psyked/js-style-guide">hosted on GitHub;</a> so please, feel free to fork it and send us a pull request.</p>
+
+</div>
+</div>
+
+</main>
+<footer class="zurb-footer">
+    <div class="row">
+        
+<div class="large-4 columns">
+    <h4>Want to contribute?</h4>
+
+    <p>This website is hosted on GitHub, so it's really easy to get involved.</p>
+
+    <p>Fork this project or create a Pull request and we can bring your suggestions into the fold.</p>
+
+    <p><a href="https://github.com/psyked/js-style-guide" class="button">View this project on GitHub.</a></p>
+</div>
+    </div>
+</footer>
+<script src="bower_components/jquery/jquery.min.js"></script>
+<script src="bower_components/foundation/js/foundation.min.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.magellan.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="js/app.js"></script>
+</body>
 </html>

@@ -1,5 +1,5 @@
 ---
-title: The “Too long, didn’t read” Style Guide
+title: The “Too long; didn’t read” Style Guide
 ---
 1. Create a **.jshintrc** file with the following content, and place it in the root folder of your project, and then configure your IDE to use those settings and auto-format your code when you save or commit it.
         {
