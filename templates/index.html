@@ -2,7 +2,14 @@
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>{{#if title}}
+    <meta property="og:title" content="{{ title }}"/>{{/if}}{{#if image}}
+    <meta property="og:image" content="{{ image }}"/>{{/if}}{{#if url}}
+    <meta property="og:url" content="{{ url }}"/>{{/if}}{{#if description}}
+    <meta property="og:description" content="{{ description }}"/>{{/if}}
+    <meta property="og:site_name" content="MMT Digital's JavaScript Style Guide"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_GB"/>
     <title>JS Style Guide - MMT Digital</title>
     <link rel="stylesheet" href="css/app.css"/>
     <script src="bower_components/modernizr/modernizr.js"></script>
@@ -11,14 +18,14 @@
 <body>
 <header>{{> topnav }}</header>
 <main role="main">
-    <div class="row">
         {{#if title}}
+    <div class="row">
         <div class="large-12 columns">
             <h1>{{ title }}</h1>
             <hr/>
         </div>
     </div>
-    {{/if}}
+        {{/if}}
     {{#markdown}}
     {{> body }}
     {{/markdown}}
