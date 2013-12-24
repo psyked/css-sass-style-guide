@@ -97,7 +97,7 @@ module.exports = function (grunt) {
         favicons: {
             options: {},
             icons: {
-                src: 'assets/logo.jpg',
+                src: 'assets/HTML5_Styling_512.png',
                 dest: './'
             }
         }

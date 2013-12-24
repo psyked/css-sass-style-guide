@@ -1,4 +1,4 @@
-MMT Digital's JavaScript style guide
-====================================
+MMT Digital's CSS / SASS Development Guidelines
+===============================================
 
-A work in progress! See http://psyked.github.io/js-style-guide/
+A work in progress! See http://psyked.github.io/css-sass-style-guide/
