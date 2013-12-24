@@ -1,2 +1,2 @@
 $(document).foundation();
-//# sourceMappingURL=js/app.js.map
+//# sourceMappingURL=app.js.map

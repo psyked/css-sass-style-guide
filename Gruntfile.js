@@ -1,3 +1,4 @@
+/* jshint node:true */
 module.exports = function (grunt) {
     'use strict';
     grunt.initConfig({
@@ -68,8 +69,8 @@ module.exports = function (grunt) {
             server: {
                 options: {
                     port: 9000,
-                    hostname: "*",
-                    base: "./",
+                    hostname: '*',
+                    base: './',
                     middleware: function (connect, options) {
                         var path = require('path');
                         return [
@@ -84,7 +85,8 @@ module.exports = function (grunt) {
         uglify: {
             js: {
                 options: {
-                    sourceMap: 'js/app.js.map'
+                    sourceMap: 'app.js.map',
+                    sourceMapRoot: '../js/'
                 },
                 files: {
                     'js/app.js': ['js-source/app.js']
