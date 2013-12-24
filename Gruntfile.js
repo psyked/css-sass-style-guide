@@ -90,6 +90,14 @@ module.exports = function (grunt) {
                     'js/app.js': ['js-source/app.js']
                 }
             }
+        },
+
+        favicons: {
+            options: {},
+            icons: {
+                src: 'assets/logo.jpg',
+                dest: './'
+            }
         }
     });
 
@@ -99,6 +107,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-favicons');
 
     grunt.registerTask('build', ['assemble', 'sass', 'uglify']);
     grunt.registerTask('default', ['build', 'connect', 'open', 'watch']);
