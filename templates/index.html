@@ -13,19 +13,18 @@
     <title>JS Style Guide - MMT Digital</title>
     <link rel="stylesheet" href="css/app.css"/>
     <script src="bower_components/modernizr/modernizr.js"></script>
-    <script src="highlight/highlight.pack.js"></script>
 </head>
 <body>
 <header>{{> topnav }}</header>
 <main role="main">
-        {{#if title}}
+    {{#if title}}
     <div class="row">
         <div class="large-12 columns">
             <h1>{{ title }}</h1>
             <hr/>
         </div>
     </div>
-        {{/if}}
+    {{/if}}
     {{#markdown}}
     {{> body }}
     {{/markdown}}
@@ -38,6 +37,7 @@
 <script src="bower_components/jquery/jquery.min.js"></script>
 <script src="bower_components/foundation/js/foundation.min.js"></script>
 <script src="bower_components/foundation/js/foundation/foundation.magellan.js"></script>
+<script src="highlight/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <script src="js/app.js"></script>
 </body>
