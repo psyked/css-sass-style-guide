@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta property="og:title" content="SASS / CSS Development Guidelines"/>
+    <meta property="og:title" content="Summary"/>
     <meta property="og:site_name" content="MMT Digital's SASS / CSS Style Guide"/>
     <meta property="og:type" content="website"/>
     <meta property="og:locale" content="en_GB"/>
-    <title>SASS / CSS Development Guidelines</title>
+    <title>Summary</title>
     <link rel="stylesheet" href="css/app.css"/>
     <script src="bower_components/modernizr/modernizr.js"></script>
 </head>
@@ -43,13 +43,13 @@
     
     <div class="row">
         <div class="large-12 columns">
-            <h1>SASS / CSS Development Guidelines</h1>
+            <h1>Summary</h1>
             <hr/>
         </div>
     </div>
     
     <div class='row'>
-<div class='large-6 columns'>
+<div class='large-12 columns'>
 <h2 id="core-principles">Core Principles</h2>
 <p>We follow the SASS structure as defined by Eric Myers on his <a href="http://stackoverflow.com/questions/12822810/structuring-css-sass-less-files-by-elements-by-function-and-by-media-queries/12824576#12824576">Stack Overflow response.</a></p>
 <p>The core principles are:</p>
@@ -57,6 +57,7 @@
 <li>Start general.</li>
 <li>Move towards specifics as slowly as possible.</li>
 <li>Never divide based on any external concepts.</li>
+<li>Only use classes for styling, <em>(and keep Id&#39;s for manipulating the DOM with code.)</em></li>
 </ol>
 <p>In addition, we say that:</p>
 <ul>
@@ -64,13 +65,70 @@
 </ul>
 
 </div>
+</div>
+<div class='row'>
+<div class='large-12 columns'>
+<h2 id="source-code-structure-formatting">Source Code Structure / Formatting</h2>
+<hr>
+
+</div>
+</div>
+<div class='row'>
 <div class='large-6 columns'>
-<h2 id="sass-css-formatting">SASS/CSS Formatting</h2>
+<h3 id="css-guidelines">CSS Guidelines</h3>
 <ul>
-<li>Sass mixins should be <strong>camelCase</strong> (no spaces, underscores or hyphens), e.g: <code>borderRadiusIdentical</code></li>
-<li>CSS should be lowercase with words separated by hyphens, e.g: <code>.feedback-label</code></li>
+<li>Use soft-tabs with a four space indent.</li>
+<li>Put spaces after <code>:</code> in property declarations.</li>
+<li>Put spaces before <code>{</code> in rule declarations.</li>
+<li>Use hex colour codes (<code>#000</code>) unless using rgba colours.</li>
 </ul>
-<p><em>Note: Where possible only &quot;classes&quot; should be used for styling and &quot;Id&#39;s&quot; reserved for manipulating the DOM.</em></p>
+
+</div>
+<div class='large-6 columns'>
+<pre><code>body.class-name {
+    background: #ccc;
+}
+
+footer .large-title {
+    font-size: 2em;
+    line-height: 3em;
+    color: #f00;
+}</code></pre>
+
+</div>
+</div>
+<div class='row'>
+<div class='large-12 columns'>
+<hr>
+
+</div>
+</div>
+<div class='row'>
+<div class='large-6 columns'>
+<h3 id="sass-guidelines">SASS Guidelines</h3>
+<ul>
+<li>Nest your content to keep your code D.R.Y. <br/>(<strong>D</strong>on&#39;t <strong>R</strong>epeat <strong>Y</strong>ourself)</li>
+<li>Sass mixins should use <strong>camelCase</strong> for their names, <br/>e.g: <code>borderRadiusIdentical</code></li>
+<li>CSS should be lowercase with words separated by hyphens, <br/>e.g: <code>.feedback-label</code></li>
+<li>Use the project structure outlined in our <a href="https://bitbucket.org/mmtdigital/mmtdigital-sass-structure">Bitbucket repository.</a></li>
+</ul>
+
+</div>
+<div class='large-6 columns'>
+<pre><code>@mixin borderRadius($topLeft: 5px, $topRight: 5px, $bottomRight: 5px, $bottomLeft: 5px) {
+    -moz-border-radius: $topLeft $topRight $bottomRight $bottomLeft;
+    -webkit-border-top-left-radius: $topLeft;
+    -webkit-border-top-right-radius: $topRight;
+    -webkit-border-bottom-right-radius: $bottomRight;
+    -webkit-border-bottom-left-radius: $bottomLeft;
+    border-radius: $topLeft $topRight $bottomRight $bottomLeft;
+}</code></pre>
+
+</div>
+</div>
+<div class='row'>
+<div class='large-12 columns'>
+<p><a href='' class='button'>Read the full SASS / CSS formatting guidelines now.</a></p>
 
 </div>
 </div>
