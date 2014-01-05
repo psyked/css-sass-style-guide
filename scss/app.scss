@@ -13,6 +13,10 @@ body {
   }
 }
 
+pre {
+  overflow: hidden;
+}
+
 .zurb-footer {
   background: #333;
   color: $secondary-color;
