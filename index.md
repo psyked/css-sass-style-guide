@@ -4,17 +4,29 @@ title: Summary
 <div class='row'>
 <div class='large-12 columns'>
 {{#markdown}}
-## Core Principles
-We follow the SASS structure as defined by Eric Myers on his [Stack Overflow response.](http://stackoverflow.com/questions/12822810/structuring-css-sass-less-files-by-elements-by-function-and-by-media-queries/12824576#12824576)
+We have an SASS / CSS Structure project on Bitbucket which serves to outline the basic structure for our SCSS source files.
+All projects should use the folder structure and mixins included in this project, which makes it much easier to share
+improvements between multiple projects.
 
-The core principles are:
+<a href='https://bitbucket.org/mmtdigital/mmtdigital-sass-structure' class='button'>Open the SASS Structure project on Bitbucket</a>
+{{/markdown}}
+</div>
+</div>
+<div class='row'>
+<div class='large-4 columns'>
+{{#markdown}}
+![CSS3](assets/HTML5_Styling_512.png)
+{{/markdown}}
+</div>
+<div class='large-8 columns'>
+{{#markdown}}
+## Code Organization: Core Principles
+- - -
 1. Start general.
 2. Move towards specifics as slowly as possible.
 3. Never divide based on any external concepts.
 4. Only use classes for styling, *(and keep Id's for manipulating the DOM with code.)*
-
-In addition, we say that:
-- Responsive/IE styles should go as close to the structure they affect as possible.
+5. Responsive/IE styles should go as close to the structure they affect as possible.
 {{/markdown}}
 </div>
 </div>
