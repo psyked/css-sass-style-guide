@@ -27,6 +27,8 @@ improvements between multiple projects.
 3. Never divide based on any external concepts.
 4. Only use classes for styling, *(and keep Id's for manipulating the DOM with code.)*
 5. Responsive/IE styles should go as close to the structure they affect as possible.
+
+<a href='./code-organisation.html' class='button'>What does this mean?</a>
 {{/markdown}}
 </div>
 </div>

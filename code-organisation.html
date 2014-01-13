@@ -1,0 +1,104 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta property="og:title" content="Code Organisation - Core Principles"/>
+    <meta property="og:site_name" content="MMT Digital's SASS / CSS Style Guide"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_GB"/>
+    <title>Code Organisation - Core Principles</title>
+    <link rel="apple-touch-icon" href="./apple-touch-icon-144x144-precomposed.png">
+    <link rel="icon" href="./favicon.png">
+    <!--[if IE]>
+    <link rel="shortcut icon" href="./favicon.ico">
+    <![endif]-->
+    <!-- or, set /favicon.ico for IE10 win -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./apple-touch-icon-144x144-precomposed.png">
+    <link rel="stylesheet" href="css/app.css"/>
+    <script src="bower_components/modernizr/modernizr.js"></script>
+</head>
+<body>
+<header>
+<div class="contain-to-grid fixed">
+    <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+            <li class="name">
+                <h1>
+                    <a href="./"><img src="assets/mmt-logo.svg" width="32" height="32" style="margin-right:1em"/> SASS / CSS Development Guidelines</a>
+                </h1>
+            </li>
+        </ul>
+    </nav>
+</div></header>
+<main role="main">
+    
+    <div class="row">
+        <div class="large-12 columns">
+            <h1>Code Organisation - Core Principles</h1>
+            <hr/>
+        </div>
+    </div>
+    
+    <div class='row'>
+<div class='large-12 columns'>
+<blockquote>
+<p>Our Code Organisation guidelines are lifted from <a href="http://stackoverflow.com/questions/12822810/structuring-css-sass-less-files-by-elements-by-function-and-by-media-queries/12824576#12824576">Eric Meyers&#39; post on StackOverflow</a> but are repeated here for convenience.</p>
+</blockquote>
+<p>CSS is already a structured language. For better or worse, the order of your code changes it&#39;s meaning. Because of that, it&#39;s important that any CSS organization scheme is dictated primarily by the cascade. The other structural aspect of CSS is semantics. Use it to your advantage. The concern of organization is keeping things meaningful and maintainable. The best thing you can do to retain meaning is to show relationships. Relationships are already expressed by semantics.</p>
+<p>Put those things together, and you end up with code organized by <strong>specificity</strong> first and then <strong>semantics</strong>, but never by external concepts such as type vs. layout or screen-size. Here&#39;s my naming scheme:</p>
+<pre><code>base/
+  - Sass imports and settings - no CSS output.
+  - e.g _grid, _colors, _rhythm, etc.
+general/
+  - Initial CSS baseline with resets, defaults, font imports, and classes to extend.
+  - e.g. _reset, _root, _fonts, _icons, _defaults, etc.
+layout/
+  - The rough outline of the site structure.
+  - Not &quot;layout&quot; as a set of properties excluding type, &quot;layout&quot; as the overall site template which might well include typography.
+  - e.g. _banner, _nav, _main, _contentinfo, etc.
+modules/
+  - All the details. First by effect (classes/general), then by widget (ids/specifics).
+  - e.g. _users, _admin, _product-lists etc.</code></pre>
+<p><strong>Media-queries should stay as close as possible to the code they affect.</strong> When possible, they go directly inline (with Sass media bubbling). If that becomes bulky, they move outside the block, but <em>never outside the partial</em>. MQ&#39;s are overrides. When you override code, it is especially important that you are able to see exactly what is being overridden.</p>
+<p>On some sites, you may take this structure farther. I&#39;ve occasionally added two folders at the end: <code>plugins/</code> to manage 3rd-party code, and <code>overrides/</code> to handle unavoidable (try to avoid them!) location-specific overrides to a widget. I&#39;ve also gone deeper, adding a <code>fonts/</code> folder with partials for each font family, or a <code>users/</code> folder with partials for adding, editing, viewing, etc. The specifics are flexible, but the basic organization remains the same:</p>
+<ul>
+<li>Start general.</li>
+<li>Move towards specifics as slowly as possible.</li>
+<li><strong>Never</strong> divide based on any external concepts (type/layout, screen-sizes, etc).</li>
+</ul>
+
+</div>
+</div>
+
+
+</main>
+<footer class="zurb-footer">
+    <div class="row">
+        
+<div class="large-4 columns">
+    <h4>Want to contribute?</h4>
+    <p>This website is hosted on GitHub, so it's really easy to get involved.</p>
+    <p>Fork this project or create a Pull request and we can bring your suggestions into the fold.</p>
+    <p><a href="https://github.com/psyked/css-sass-style-guide" class="button">View this project on GitHub.</a></p>
+</div>
+<div class="large-8 columns">
+<h4 id="have-you-seen-our-other-projects-">Have you seen our other projects?</h4>
+<ul>
+<li><a href="http://psyked.github.io/html-style-guide/">HTML Development Guidelines</a></li>
+<li><strong>SASS / CSS Development Guidelines</strong></li>
+<li><a href="http://psyked.github.io/js-style-guide/">JavaScript Style Guide</a></li>
+</ul>
+
+</div>
+    </div>
+</footer>
+<script src="bower_components/jquery/jquery.min.js"></script>
+<script src="bower_components/foundation/js/foundation.min.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.magellan.js"></script>
+<script src="highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="js/app.js"></script>
+</body>
+</html>
