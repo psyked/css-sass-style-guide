@@ -43,7 +43,7 @@ module.exports = function (grunt) {
             },
 
             html_source: {
-                files: ['*.md', 'templates/**'],
+                files: ['**/*.md', 'templates/**'],
                 tasks: ['assemble']
             },
 

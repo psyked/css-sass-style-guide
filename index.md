@@ -2,15 +2,15 @@
 title: SASS / CSS Development Guidelines
 ---
 <div class='row'>
+    <div class='large-12 columns'>{{md 'content/introduction.md'}}</div>
 </div>
 <div class='row'>
     <div class='large-12 columns'>
 {{#markdown}}
-All you need to do is:
-1. Download the latest version of the source files from Bitbucket.
-2. Drop the files into your project.
-3. Use it as a scaffold for your structuring your source files and use our existing collection of mixins.
+# SCSS Style Guide
+- - -
 {{/markdown}}
+    </div>
 </div>
 <div class='row'>
     <div class='large-12 columns'>{{md 'content/template-project.md'}}</div>
@@ -34,6 +34,14 @@ All you need to do is:
 <a href='./code-organisation.html' class='button'>What does this mean?</a>
 {{/markdown}}
 </div>
+</div>
+<div class='row'>
+    <div class='large-12 columns'>
+{{#markdown}}
+# CSS Style Guide
+- - -
+{{/markdown}}
+    </div>
 </div>
 <div class='row'>
 <div class='large-12 columns'>

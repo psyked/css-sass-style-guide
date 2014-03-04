@@ -34,29 +34,49 @@
 </div></header>
 <main role="main">
     <div class='row'>
-<div class='large-12 columns'>
-<h2 id="sass-template-project">SASS Template Project</h2>
+    <div class='large-12 columns'><h1 id="css-development-guidelines">CSS Development Guidelines</h1>
+<hr>
+<h2 id="-small-1-adopt-an-small-scss-first-small-approach-to-development-small-"><small>1. Adopt an </small> SCSS-first <small>approach to development.</small></h2>
+<p>Whenever possible, we should be using SCSS as our language of choice. It keeps the curly-brackets of normal CSS (for
+easier copy/paste and conversion of standard CSS code) and enhances it with support for nesting, variables and mixins.</p>
+<h2 id="-small-2-keep-your-source-code-small-structured-organised-"><small>2. Keep your source code</small> Structured &amp; Organised.</h2>
+<p>Don&#39;t be afraid to break your CSS stylesheets into dozens of separate files. Ideally, you should have one SCSS file for
+each distinct component of your website, and a single top-level <code>styles.scss</code> file that references others in the order
+which they need to be imported.
+<a href="https://bitbucket.org/mmtdigital/mmtdigital-sass-structure">We have a SCSS Structure project to get you started on Bitbucket.</a></p>
+<h2 id="-small-3-use-small-semantic-selectors-"><small>3. Use</small> Semantic selectors.</h2>
+<p>You should only use classes for styling (keep Ids purely for Javascript), and you should name your elements and
+selectors according to what they represent, not how they appear. This ensures that things are going to make sense in the
+long term if your designs change.</p>
+<p>Also, stick to <code>lowercase</code> and <code>separated-by-hyphens</code> for your class names - no uppercase or mixed case selectors.</p>
+<h2 id="-small-4-use-small-mixins-"><small>4. Use </small> Mixins.</h2>
+<p>Nobody really wants to have to remember all of the cross-browser hacks that exist, and neither do you want to have to be
+doing anything too repetitive in your source code. Take advantage of Mixins to keep your source code readable and lean.</p>
+<h2 id="-small-5-always-always-small-minify-small-on-live-environments-small-"><small>5. Always, always, </small> Minify <small> on Live environments.</small></h2>
+<p>CSS source file downloads are part of the critical rendering path for a browser. You need to deliver your styles as
+effectively as possible, and that means minifying your code into a single optimised file.</p>
+</div>
+</div>
+<div class='row'>
+    <div class='large-12 columns'>
+<h1 id="scss-style-guide">SCSS Style Guide</h1>
 <hr>
 
+    </div>
 </div>
-</div>
-<div class='row panel'>
-<div class='large-6 columns'>
-<p>We have an SASS / CSS Structure project on Bitbucket which serves to outline the basic structure for our SCSS source files.</p>
-<p>All projects should use the folder structure and mixins included in this project, which makes it much easier to share
-improvements between multiple projects.</p>
-<p><a href='https://bitbucket.org/mmtdigital/mmtdigital-sass-structure' class='button'>View the SASS Structure project on Bitbucket</a></p>
-
-</div>
-
-<div class='large-6 columns'>
+<div class='row'>
+    <div class='large-12 columns'><h2 id="scss-template-project">SCSS Template Project</h2>
+<hr>
+<p>We have an SASS / CSS Structure project on <a href="https://bitbucket.org/mmtdigital/mmtdigital-sass-structure">Bitbucket</a> which outlines the basic structure for our SCSS source files.</p>
+<p>All projects should follow the <strong>folder structure</strong> and use the <strong>mixins</strong> included in this project, which will make it much easier to share
+improvements between multiple projects and teams.</p>
 <p>All you need to do is:</p>
 <ol>
 <li>Download the latest version of the source files from Bitbucket.</li>
 <li>Drop the files into your project.</li>
 <li>Use it as a scaffold for your structuring your source files and use our existing collection of mixins.</li>
 </ol>
-
+<p><a href='https://bitbucket.org/mmtdigital/mmtdigital-sass-structure' class='button'>Open the SASS Structure project on Bitbucket</a></p>
 </div>
 </div>
 <div class='row'>
@@ -77,6 +97,13 @@ improvements between multiple projects.</p>
 <p><a href='./code-organisation.html' class='button'>What does this mean?</a></p>
 
 </div>
+</div>
+<div class='row'>
+    <div class='large-12 columns'>
+<h1 id="css-style-guide">CSS Style Guide</h1>
+<hr>
+
+    </div>
 </div>
 <div class='row'>
 <div class='large-12 columns'>
