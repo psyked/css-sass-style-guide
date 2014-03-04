@@ -2,26 +2,9 @@
 title: SASS / CSS Development Guidelines
 ---
 <div class='row'>
-<div class='large-12 columns'>
-{{#markdown}}
-## SASS Template Project
-- - -
-{{/markdown}}
 </div>
-</div>
-<div class='row panel'>
-<div class='large-6 columns'>
-{{#markdown}}
-We have an SASS / CSS Structure project on Bitbucket which serves to outline the basic structure for our SCSS source files.
-
-All projects should use the folder structure and mixins included in this project, which makes it much easier to share
-improvements between multiple projects.
-
-<a href='https://bitbucket.org/mmtdigital/mmtdigital-sass-structure' class='button'>View the SASS Structure project on Bitbucket</a>
-{{/markdown}}
-</div>
-
-<div class='large-6 columns'>
+<div class='row'>
+    <div class='large-12 columns'>
 {{#markdown}}
 All you need to do is:
 1. Download the latest version of the source files from Bitbucket.
@@ -29,6 +12,8 @@ All you need to do is:
 3. Use it as a scaffold for your structuring your source files and use our existing collection of mixins.
 {{/markdown}}
 </div>
+<div class='row'>
+    <div class='large-12 columns'>{{md 'content/template-project.md'}}</div>
 </div>
 <div class='row'>
 <div class='large-4 columns'>
