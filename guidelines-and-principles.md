@@ -20,7 +20,7 @@ Don't tie code to a certain page, instead write your styles so that they can be 
 - Keep specificity, this makes it easier for other developers to debug code.
 - Using tags and classes, IDs should be avoided because they are highly specific.
 - Don't over specify selectors, `.class-name` is better than `div.class-name`. The second example increases specificity needlessly.
-- Keep your CSS only as specific as it needs to be. Something like `body .about-page .container section .content .col-1 article .cool-widget p` would be an extreme example, not only is it completely over specified, it is not modular at all and will increase CSS file size needlessly. Oh and it will <a href='https://developers.google.com/speed/articles/reflow?hl=fr'>decrease reflow speed</a>. `.cool-widget p` would be a better way of writing it.
+- Keep your CSS only as specific as it needs to be. Something like `body .about-page .container section .content .col-1 article .cool-widget p` would be an extreme example, not only is it completely over specified, it is not modular at all, will increase CSS file size needlessly and will have a high impact on <a href='https://developers.google.com/speed/articles/reflow?hl=fr'>page reflow speed</a> (heavy use of descendant selector). A better way of writing this could be `.cool-widget p` or using a direct descendant `.cool-widget > p`.
 - Avoid the use of !important, this completely messes with specificity. Using it will make mean other developers will have a much harder time overriding the code.
 
 

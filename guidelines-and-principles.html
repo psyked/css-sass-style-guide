@@ -49,7 +49,7 @@
 <li>Keep specificity, this makes it easier for other developers to debug code.</li>
 <li>Using tags and classes, IDs should be avoided because they are highly specific.</li>
 <li>Don&#39;t over specify selectors, <code>.class-name</code> is better than <code>div.class-name</code>. The second example increases specificity needlessly.</li>
-<li>Keep your CSS only as specific as it needs to be. Something like <code>body .about-page .container section .content .col-1 article .cool-widget p</code> would be an extreme example, not only is it completely over specified, it is not modular at all and will increase CSS file size needlessly. Oh and it will <a href='https://developers.google.com/speed/articles/reflow?hl=fr'>decrease reflow speed</a>. <code>.cool-widget p</code> would be a better way of writing it.</li>
+<li>Keep your CSS only as specific as it needs to be. Something like <code>body .about-page .container section .content .col-1 article .cool-widget p</code> would be an extreme example, not only is it completely over specified, it is not modular at all, will increase CSS file size needlessly and will have a high impact on <a href='https://developers.google.com/speed/articles/reflow?hl=fr'>page reflow speed</a> (heavy use of descendant selector). A better way of writing this could be <code>.cool-widget p</code> or using a direct descendant <code>.cool-widget &gt; p</code>.</li>
 <li>Avoid the use of !important, this completely messes with specificity. Using it will make mean other developers will have a much harder time overriding the code.</li>
 </ul>
 <h2 id="keep-code-light">Keep code light</h2>
