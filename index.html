@@ -55,6 +55,9 @@ doing anything too repetitive in your source code. Take advantage of Mixins to k
 <h2 id="-small-5-always-always-small-minify-small-on-live-environments-small-"><small>5. Always, always, </small> Minify <small> on Live environments.</small></h2>
 <p>CSS source file downloads are part of the critical rendering path for a browser. You need to deliver your styles as
 effectively as possible, and that means minifying your code into a single optimised file.</p>
+<h2 id="-small-6-make-your-css-small-modular-"><small>6. Make your CSS</small> Modular.</h2>
+<p>Don&#39;t tie code to a certain page, instead write your styles so that they can be used on all your pages. It is better to write <code>.my-cool-widget</code> as opposed to <code>.blog-page .my-cool-widget</code>. The first example can be re-used whereas the second can only be used on the blog page.</p>
+<p><a href='guidelines-and-principles.html' class='button'>Read the full SASS / CSS formatting guidelines now.</a></p>
 </div>
 </div>
 <div class='row'>
@@ -147,6 +150,7 @@ footer .large-title {
 <h3 id="sass-guidelines">SASS Guidelines</h3>
 <ul>
 <li>Nest your content to keep your code D.R.Y. <br/>(<strong>D</strong>on&#39;t <strong>R</strong>epeat <strong>Y</strong>ourself)</li>
+<li>Limit nesting to a few levels deep. Nesting that is 4+ levels deep is difficult to read, is difficult to search, will increase specificity and generate bloated CSS. </li>
 <li>Sass mixins should use <strong>camelCase</strong> for their names, <br/>e.g: <code>borderRadiusIdentical</code></li>
 <li>CSS should be lowercase with words separated by hyphens, <br/>e.g: <code>.feedback-label</code></li>
 <li>Use the project structure outlined in our <a href="https://bitbucket.org/mmtdigital/mmtdigital-sass-structure">Bitbucket repository.</a></li>

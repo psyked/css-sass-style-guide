@@ -24,3 +24,8 @@ doing anything too repetitive in your source code. Take advantage of Mixins to k
 ## <small>5. Always, always, </small> Minify <small> on Live environments.</small>
 CSS source file downloads are part of the critical rendering path for a browser. You need to deliver your styles as
 effectively as possible, and that means minifying your code into a single optimised file.
+
+## <small>6. Make your CSS</small> Modular.
+Don't tie code to a certain page, instead write your styles so that they can be used on all your pages. It is better to write `.my-cool-widget` as opposed to `.blog-page .my-cool-widget`. The first example can be re-used whereas the second can only be used on the blog page.
+
+<a href='guidelines-and-principles.html' class='button'>Read the full SASS / CSS formatting guidelines now.</a>
