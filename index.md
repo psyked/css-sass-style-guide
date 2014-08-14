@@ -87,6 +87,7 @@ title: SASS / CSS Development Guidelines
 {{#markdown}}
 ### SASS Guidelines
 - Nest your content to keep your code D.R.Y. <br/>(**D**on't **R**epeat **Y**ourself)
+- Limit nesting to a few levels deep. Nesting that is 4+ levels deep is difficult to read, is difficult to search, will increase specificity and generate bloated CSS. 
 - Sass mixins should use **camelCase** for their names, <br/>e.g: `borderRadiusIdentical`
 - CSS should be lowercase with words separated by hyphens, <br/>e.g: `.feedback-label`
 - Use the project structure outlined in our [Bitbucket repository.](https://bitbucket.org/mmtdigital/mmtdigital-sass-structure)

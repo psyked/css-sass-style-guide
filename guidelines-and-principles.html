@@ -1,0 +1,159 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta property="og:title" content="CSS / SASS Guidelines &amp; principles"/>
+    <meta property="og:site_name" content="SASS / CSS Style Guide"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_GB"/>
+    <title>CSS / SASS Guidelines &amp; principles</title>
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon-144x144-precomposed.png">
+    <link rel="icon" href="assets/icons/favicon.png">
+    <!--[if IE]>
+    <link rel="shortcut icon" href="assets/icons/favicon.ico">
+    <![endif]-->
+    <!-- or, set /favicon.ico for IE10 win -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/icons/apple-touch-icon-144x144-precomposed.png">
+    <link rel="stylesheet" href="css/app.css"/>
+    <script src="bower_components/modernizr/modernizr.js"></script>
+</head>
+<body>
+<header>
+<div class="contain-to-grid fixed">
+    <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+            <li class="name">
+                <h1>
+                    <a href="./"><img src="assets/mmt-logo.svg" width="32" height="32" style="margin-right:1em"/> SASS / CSS Development Guidelines</a>
+                </h1>
+            </li>
+        </ul>
+    </nav>
+</div></header>
+<main role="main">
+    <div class='row'>
+<div class="large-12 columns">
+<h1 id="css-sass-guidelines-principles">CSS / SASS Guidelines &amp; principles</h1>
+<hr>
+<h2 id="keep-code-modular">Keep code modular</h2>
+<hr>
+<h3 id="use-a-grid">Use a grid</h3>
+<p>Use a grid to determine the width of your layout and the content should flow freely within the grid. The grid should be fluid (percentage) and not a fixed pixel size. Remember, <a href='http://alistapart.com/article/fluidgrids/'>target ÷ context = result</a>.</p>
+<h3 id="write-code-that-works-across-your-whole-site">Write code that works across your whole site</h3>
+<p>Don&#39;t tie code to a certain page, instead write your styles so that they can be used on all your pages. It is better to write <code>.my-cool-widget</code> as opposed to <code>.blog-page .my-cool-widget</code>. The first example can be re-used whereas the second can only be used on the blog page.</p>
+<h2 id="keep-specificity-low">Keep specificity low</h2>
+<hr>
+<ul>
+<li>Keep specificity, this makes it easier for other developers to debug code.</li>
+<li>Using tags and classes, IDs should be avoided because they are highly specific.</li>
+<li>Don&#39;t over specify selectors, <code>.class-name</code> is better than <code>div.class-name</code>. The second example increases specificity needlessly.</li>
+<li>Keep your CSS only as specific as it needs to be. Something like <code>body .about-page .container section .content .col-1 article .cool-widget p</code> would be an extreme example, not only is it completely over specified, it is not modular at all, will increase CSS file size needlessly and will have a high impact on <a href='https://developers.google.com/speed/articles/reflow?hl=fr'>page reflow speed</a> (heavy use of descendant selector). A better way of writing this could be <code>.cool-widget p</code> or using a direct descendant <code>.cool-widget &gt; p</code>.</li>
+<li>Avoid the use of !important, this completely messes with specificity. Using it will make mean other developers will have a much harder time overriding the code.</li>
+</ul>
+<h2 id="keep-code-light">Keep code light</h2>
+<hr>
+<h3 id="frameworks">Frameworks</h3>
+<p>If you use a framework such as bootstrap, remove any styles you don&#39;t need. Better yet, only include the styles you need. This could save over a 100KB in CSS file size.</p>
+<h3 id="minify-css">Minify CSS</h3>
+<p>CSS source file downloads are part of the critical rendering path for a browser. You need to deliver your styles as effectively as possible, and that means minifying your code into a single optimised file. Minifying will strip out whitespace which leads to a smaller file and a single file will mean less HTTP requests.</p>
+<h3 id="limit-the-amount-of-fonts-embedded">Limit the amount of fonts embedded</h3>
+<p>Embedding fonts via CSS is cool, gone are the days of limiting yourself to a small subset of &quot;web safe&quot; fonts. However, embeddng many fonts can have a dramatic impact on performance. If there are multiple variants of a font, consider picking out three or so variants.</p>
+<h2 id="accessibility">Accessibility</h2>
+<hr>
+<h3 id="use-scalable-values-for-fonts">Use scalable values for fonts</h3>
+<p>Use scalable values such as ems or rems. If using rems, you can add a pixel fallback for old browsers via a mixin:</p>
+<pre><code>@mixin font-size($sizeValue: 1.6) {
+    font-size: ($sizeValue * 10) + px;
+    font-size: $sizeValue + rem;
+}</code></pre>
+<p><br /></p>
+<h2 id="consider-using-an-object-oriented-css-approach">Consider using an object oriented CSS approach</h2>
+<hr>
+
+</div>
+</div>
+<div class='row'>
+<div class="large-12 columns">
+<p>Although not neccessary, OOCSS practices can make code a lot more structured, maintainable and lighter.</p>
+<p>Consider the following CSS of three boxes. If we look at the styling, they are pretty much identical apart from the background colour.</p>
+<pre><code>.box-blue {
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+    background: #ace;<br>}
+.box-red {
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+    background: #c00;<br>}
+.box-green {
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+    background: #aca;<br>}</code></pre>
+<p><br />
+A better way to write it would be to separate the common elements, in this case <code>padding</code>, <code>margin</code> and <code>border-radius</code>, then extend the existing  <code>.box</code> class. As you can see we are reducing a lot of needless CSS declarations and as a benefit our CSS file will be smaller.</p>
+<pre><code>.box {
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+}
+.box.blue {
+    background: #ace;
+}
+.box.red {
+    background: #c00;
+}
+.box.red {
+    background: #aca;
+}</code></pre>
+<p><br />
+The corresponding SASS:</p>
+<pre><code>.box {
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+    &amp;.blue {
+        background: #ace;
+    }
+    &amp;.red {
+        background: #c00;<br>    }
+    &amp;.green {
+        background: #aca;<br>    }
+}</code></pre>
+<hr>
+
+</div>
+</div>
+
+</main>
+<footer class="zurb-footer">
+    <div class="row">
+        
+<div class="large-4 columns">
+    <h4>Want to contribute?</h4>
+    <p>This website is hosted on GitHub, so it's really easy to get involved.</p>
+    <p>Fork this project or create a Pull request and we can bring your suggestions into the fold.</p>
+    <p><a href="https://github.com/psyked/css-sass-style-guide" class="button">View this project on GitHub.</a></p>
+</div>
+<div class="large-8 columns">
+<h4 id="have-you-seen-our-other-projects-">Have you seen our other projects?</h4>
+<ul>
+<li><a href="http://psyked.github.io/html-style-guide/">HTML Development Guidelines</a></li>
+<li><strong>SASS / CSS Development Guidelines</strong></li>
+<li><a href="http://psyked.github.io/js-style-guide/">JavaScript Style Guide</a></li>
+</ul>
+
+</div>
+    </div>
+</footer>
+<script src="bower_components/jquery/jquery.min.js"></script>
+<script src="bower_components/foundation/js/foundation.min.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.magellan.js"></script>
+<script src="highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="js/app.js"></script>
+</body>
+</html>
