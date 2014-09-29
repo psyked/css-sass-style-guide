@@ -3,7 +3,7 @@ CSS / SASS Development Guidelines
 
 Live Preview
 ------------
-View the GitHub Pages version of this repo at http://psyked.github.io/css-sass-style-guide/
+View the GitHub Pages version of this repo at http://mmtdigital.github.io/css-sass-style-guide/
 
 Contributing
 ------------
